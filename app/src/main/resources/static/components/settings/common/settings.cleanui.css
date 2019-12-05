@@ -1,0 +1,255 @@
+body.config--borderLess .card {
+    border: none;
+}
+
+body.config--borderLess .card.utils__sortable__collapsed .card-header {
+    padding-bottom: 1.53rem;
+}
+
+body.config--borderLess .card-header {
+    padding-top: 1.53rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+body.config--borderLess .card-footer {
+    padding-top: 0;
+    border-top: 0;
+}
+
+body.config--borderLess .utils__title {
+    text-transform: uppercase;
+    font-size: 1.23rem;
+}
+
+body.config--squared-corners .card, body.config--squared-corners .footer, body.config--squared-corners .utils__widget {
+    -webkit-border-radius: 0 !important;
+            border-radius: 0 !important;
+}
+
+body.config--vertical.config--unfixed {
+    padding-top: 0;
+}
+
+body.config--vertical.config--unfixed .top-bar {
+    position: static;
+}
+
+body.config--vertical.config--boxed {
+    padding-left: 6.15rem;
+}
+
+@media (max-width: 767px) {
+    body.config--vertical.config--boxed {
+        padding-left: 0;
+    }
+}
+
+body.config--vertical.config--boxed .top-bar {
+    width: auto !important;
+    max-width: 1199px;
+    margin: 0px auto !important;
+    right: 0;
+    left: 6.15rem;
+    padding-left: 1.53rem;
+}
+
+@media (max-width: 1199px) {
+    body.config--vertical.config--boxed .top-bar {
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    body.config--vertical.config--boxed .top-bar__logo {
+        display: none;
+        padding-left: 0;
+    }
+}
+
+body.config--vertical.config--boxed .utils__top-sidebar {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body.config--vertical.config--boxed .utils__content {
+    width: auto !important;
+    max-width: 1199px;
+    margin: 0px auto !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body.config--horizontal.config--unfixed {
+    padding-top: 0;
+    overflow-x: hidden;
+}
+
+body.config--horizontal.config--unfixed .top-bar {
+    position: static;
+}
+
+@media (min-width: 768px) {
+    body.config--horizontal {
+        padding-top: 10rem;
+        padding-left: 0;
+    }
+    body.config--horizontal.config--unfixed .menu-left {
+        position: relative;
+    }
+    body.config--horizontal .utils__content {
+        margin-left: 0;
+    }
+    body.config--horizontal .top-bar {
+        top: 5rem;
+        padding-left: 1.53rem;
+    }
+    body.config--horizontal .top-bar__logo {
+        display: none;
+    }
+    body.config--horizontal .menu-left {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 5rem;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none;
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+        z-index: 991;
+    }
+    body.config--horizontal .menu-left__lock {
+        display: none;
+    }
+    body.config--horizontal .menu-left__inner {
+        top: 0;
+        left: 19.23rem;
+        right: 0;
+        width: auto;
+        z-index: 9;
+    }
+    body.config--horizontal .menu-left__divider {
+        display: none;
+    }
+    body.config--horizontal .menu-left__logo {
+        position: relative;
+        z-index: 10;
+    }
+    body.config--horizontal .menu-left__list--root {
+        margin: 0;
+    }
+    body.config--horizontal .menu-left__list--root > li {
+        float: left;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item:before {
+        top: auto;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item > a {
+        height: 5rem;
+        padding: 1.07rem 1.3rem 0rem;
+        border-left: 1px solid #393749;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item > a > .badge {
+        position: absolute;
+        top: 0.46rem;
+        right: 0.46rem;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item > a:after {
+        top: auto;
+        bottom: 0.46rem;
+        left: 50%;
+        margin-left: -0.24rem;
+        -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item > a > .menu-left__icon {
+        position: static;
+        width: 100%;
+        display: block;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item:hover > a {
+        background: #0e0b20;
+        color: #ffffff;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__item:hover > a > .menu-left__icon {
+        color: #ffffff;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu {
+        position: relative;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu:hover > .menu-left__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: block;
+        width: 19.23rem;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu .menu-left__submenu {
+        position: relative;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu .menu-left__submenu.menu-left__item > a:after {
+        -webkit-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+                transform: rotate(-180deg);
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu .menu-left__submenu:hover > .menu-left__list {
+        position: absolute;
+        top: 0rem;
+        left: 100%;
+        display: block;
+        width: 19.23rem;
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu--horizontal-left .menu-left__submenu.menu-left__item > a:after {
+        -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    body.config--horizontal .menu-left__list--root > li.menu-left__submenu--horizontal-left .menu-left__submenu:hover > .menu-left__list {
+        left: auto;
+        right: 100%;
+    }
+    body.config--horizontal.config--boxed {
+        padding-left: 0rem;
+    }
+    body.config--horizontal.config--boxed .menu-left {
+        left: 0;
+        right: 0;
+        max-width: 1199px;
+        margin: 0 auto;
+    }
+    body.config--horizontal.config--boxed .top-bar {
+        width: auto !important;
+        max-width: 1199px;
+        margin: 0px auto !important;
+        right: 0;
+        left: 0rem;
+        padding-left: 1.53rem;
+    }
+}
+
+@media (min-width: 768px) and (min-width: 1200px) {
+    body.config--horizontal.config--boxed .top-bar__logo {
+        display: none;
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    body.config--horizontal.config--boxed .utils__content {
+        width: auto !important;
+        max-width: 1199px;
+        margin: 0px auto !important;
+    }
+}
+
+@media (min-width: 768px) and (min-width: 768px) {
+    body.config--horizontal.config--boxed .utils__content {
+        background: #ffffff;
+    }
+}

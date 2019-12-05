@@ -1,0 +1,39 @@
+/* FOOTER */
+.footer {
+    margin-bottom: -1.47rem;
+    background: #e4e9f0;
+    -webkit-border-radius: 5px 5px 0px 0px;
+            border-radius: 5px 5px 0px 0px;
+    padding: 3.84rem 2.3rem 2.3rem;
+}
+
+.footer__bottom {
+    margin-top: 1.53rem;
+    padding-top: 2.3rem;
+    border-top: 1px solid #d2d9e5;
+}
+
+.footer__company {
+    padding-left: 3.84rem;
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+@media (max-width: 767px) {
+    .footer__company {
+        float: none;
+        margin-top: 2.3rem;
+    }
+}
+
+.footer__company-logo {
+    position: absolute;
+    top: 0.38rem;
+    left: 0;
+    width: 2.3rem;
+}
+
+.config--superclean .footer {
+    margin-bottom: 0;
+}

@@ -1,0 +1,150 @@
+.infoCard {
+    color: #74708d;
+    background-color: #ffffff;
+    padding: 1.53rem;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    display: block;
+    margin-bottom: 1.53rem;
+}
+
+.infoCard--aroundBorder {
+    border: 1px solid #e4e9f0;
+}
+
+.infoCard--interactive {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.infoCard--whiteFont {
+    color: #ffffff;
+}
+
+.infoCard--whiteFont .infoCard__icon {
+    color: #ffffff;
+}
+
+.infoCard__digit {
+    float: left;
+    margin-right: 1.53rem;
+    font-size: 3.23rem;
+    width: 4.3rem;
+    line-height: 3.84rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.infoCard__digit i {
+    font-size: 2.76rem;
+}
+
+.infoCard__title {
+    font-weight: bold;
+    font-size: 1.23rem;
+}
+
+.infoCard__desc p {
+    margin-bottom: 0;
+}
+
+.infoCard--default, .infoCard--primary, .infoCard--secondary, .infoCard--success, .infoCard--info, .infoCard--warning, .infoCard--danger {
+    color: #ffffff !important;
+}
+
+.infoCard--empty {
+    border: 1px solid #e4e9f0;
+}
+
+.infoCard--default {
+    background: #acb7bf !important;
+    border-bottom-color: #acb7bf;
+}
+
+.infoCard--primary {
+    background: #0190fe !important;
+    border-bottom-color: #0190fe;
+}
+
+.infoCard--secondary {
+    background: #6a7a84 !important;
+    border-bottom-color: #6a7a84;
+}
+
+.infoCard--success {
+    background: #46be8a !important;
+    border-bottom-color: #46be8a;
+}
+
+.infoCard--info {
+    background: #0887c9 !important;
+    border-bottom-color: #0887c9;
+}
+
+.infoCard--warning {
+    background: #f39834 !important;
+    border-bottom-color: #f39834;
+}
+
+.infoCard--danger {
+    background: #fb434a !important;
+    border-bottom-color: #fb434a;
+}
+
+.infoCard--disabled {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.infoCard--squared {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.infoCard--bordered {
+    padding: 0.38rem 0 0.76rem 0;
+    margin-bottom: -0.93rem;
+    margin-top: 0rem;
+    color: #74708d !important;
+    background-color: #ffffff !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.infoCard--bordered .infoCard__digit {
+    font-size: 2.15rem;
+    line-height: 2.92rem;
+    height: 1.84rem;
+    display: block;
+    width: auto;
+    min-width: 3.07rem;
+    margin: 0 0.76rem;
+}
+
+.infoCard--bordered .infoCard__digit i {
+    font-size: 1.84rem;
+}
+
+.infoCard--bordered .infoCard__title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.infoCard--bordered .infoCard__desc {
+    padding-top: 0;
+}
+
+.infoCard--bordered .infoCard__desc p {
+    font-size: 0.92rem;
+    margin-bottom: 0.38rem;
+    color: #b8beca;
+}
+
+@media (max-width: 991px) {
+    .infoCard {
+        margin-bottom: 1.23rem !important;
+        margin-top: 0 !important;
+    }
+}

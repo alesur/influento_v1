@@ -1,0 +1,71 @@
+.paymentCard {
+    padding: 2.3rem 2.3rem;
+    position: relative;
+}
+
+.paymentCard__icon {
+    text-align: center;
+    margin-bottom: 1.15rem;
+}
+
+.paymentCard__icon i {
+    font-size: 4.15rem;
+    color: #b8beca;
+}
+
+.paymentCard__name {
+    display: block;
+    text-align: center;
+    font-size: 1.61rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.paymentCard__number {
+    display: block;
+    text-align: center;
+    font-size: 1.23rem;
+    color: #74708d;
+    margin-bottom: 1.53rem;
+}
+
+.paymentCard__type {
+    display: block;
+    text-align: center;
+    font-size: 1.23rem;
+    margin-bottom: 1.53rem;
+    font-weight: bold;
+    color: #74708d;
+}
+
+.paymentCard__sum {
+    position: absolute;
+    top: 0.76rem;
+    right: -0.77rem;
+    background: #46be8a;
+    color: #ffffff;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 100, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 100, 0.2);
+    padding: 0 1rem;
+    font-weight: bold;
+    font-size: 1.38rem;
+}
+
+@media (max-width: 991px) {
+    .paymentCard__sum {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.paymentCard__footer {
+    text-align: center;
+    border-top: 1px solid #e4e9f0;
+    color: #74708d;
+    padding-top: 0.76rem;
+    margin-bottom: -1.16rem;
+    font-style: italic;
+    font-size: 1rem;
+}

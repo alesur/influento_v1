@@ -1,0 +1,54 @@
+.paymentTx {
+    padding: 1.15rem 1.92rem;
+    position: relative;
+    border-left: 4px solid #fb434a !important;
+}
+
+.paymentTx--income {
+    border-left: 4px solid #46be8a !important;
+}
+
+.paymentTx--income .paymentTx__icon i {
+    color: #46be8a;
+}
+
+.paymentTx__icon {
+    position: absolute;
+    top: 1.07rem;
+    right: 1.53rem;
+}
+
+.paymentTx__icon i {
+    font-size: 1.84rem;
+    color: #fb434a;
+}
+
+.paymentTx__amount {
+    font-size: 1.38rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.paymentTx__info {
+    font-size: 1rem;
+    color: #74708d;
+    margin-left: 0.38rem;
+}
+
+@media (max-width: 991px) {
+    .paymentTx__info {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.paymentTx__footer {
+    color: #74708d;
+    padding: 0.76rem 1.92rem;
+    margin: 0.76rem -1.93rem -1.16rem -1.85rem;
+    font-style: italic;
+    font-size: 1rem;
+    background: #f9fafc;
+    -webkit-border-radius: 0 0 7px 7px;
+            border-radius: 0 0 7px 7px;
+}

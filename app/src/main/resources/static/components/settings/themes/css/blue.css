@@ -1,0 +1,83 @@
+/* THEMES: BLUE */
+body.theme--blue .menu-left__logo {
+    background: #000e66;
+}
+
+body.theme--blue .menu-left__lock {
+    background: #000e66;
+}
+
+body.theme--blue .menu-left__pin-button {
+    opacity: .7;
+}
+
+body.theme--blue .menu-left__pin-button:hover {
+    opacity: 1;
+}
+
+body.theme--blue .menu-left__pin-button div {
+    background: #fff;
+}
+
+body.theme--blue .menu-left__pin-button div:before, body.theme--blue .menu-left__pin-button div:after {
+    background: #fff;
+}
+
+body.theme--blue .menu-left {
+    background: #000730;
+}
+
+body.theme--blue .menu-left__item > a {
+    color: #fff;
+}
+
+body.theme--blue .menu-left__divider {
+    background: rgba(255, 255, 255, 0.17);
+}
+
+body.theme--blue .menu-left__icon {
+    color: #fff;
+}
+
+body.theme--blue .menu-left__submenu.menu-left__item > a::after {
+    border-color: transparent rgba(255, 255, 255, 0.17) transparent transparent;
+}
+
+body.theme--blue .menu-left__item--active > a,
+body.theme--blue .menu-left__item:hover > a,
+body.theme--blue .menu-left__item:active > a,
+body.theme--blue .menu-left__item:focus > a {
+    background: #000e66;
+}
+
+body.theme--blue .menu-left__submenu--toggled.menu-left__item {
+    color: #fff;
+}
+
+body.theme--blue .menu-left__submenu--toggled.menu-left__item > a {
+    background: #000e66;
+    color: #ffffff;
+}
+
+body.theme--blue .menu-left__submenu--toggled.menu-left__item > a .menu-left__icon {
+    color: #ffffff;
+}
+
+body.theme--blue .menu-left__submenu > .menu-left__list {
+    background: #000b51;
+}
+
+@media (min-width: 768px) {
+    body.theme--blue.config--vertical.config--compact .menu-left__item > a:before {
+        background: #000e63;
+    }
+}
+
+@media (min-width: 768px) {
+    body.theme--blue.config--horizontal .menu-left__list--root > li.menu-left__item > a {
+        border-left-color: black;
+    }
+    body.theme--blue.config--horizontal .menu-left__list--root > li.menu-left__item:hover > a {
+        background: #000942;
+    }
+}

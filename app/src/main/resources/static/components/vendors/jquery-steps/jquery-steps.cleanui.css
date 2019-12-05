@@ -1,0 +1,161 @@
+/*  JQUERY STEPS */
+.wizard__steps__icon, .wizard .number {
+    border: 3px solid #0190fe;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    width: 3.46rem;
+    height: 3.46rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 2.84rem;
+    color: #0190fe;
+    font-size: 1.84rem;
+    background: #ffffff;
+}
+
+.wizard__steps__title {
+    display: block;
+}
+
+.wizard > .utils__content {
+    min-height: 11.53rem;
+    margin: 0 0 1.15rem;
+    background: transparent;
+}
+
+.wizard > .utils__content > .body {
+    background: transparent;
+    padding: 1.92rem 0;
+}
+
+.wizard .steps ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+.wizard .steps ul li {
+    -webkit-box-flex: 200;
+    -webkit-flex-grow: 200;
+        -ms-flex-positive: 200;
+            flex-grow: 200;
+    margin-bottom: 0.76rem;
+    float: none;
+    width: auto;
+    position: relative;
+}
+
+.wizard .steps ul li a {
+    background: transparent !important;
+    margin: 0 !important;
+    text-align: center;
+    color: #0e0b20 !important;
+    line-height: 2.3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.wizard .steps ul li a .number {
+    display: none;
+}
+
+.wizard .steps ul li:before, .wizard .steps ul li:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 50%;
+    top: 2.76rem;
+    right: 0;
+    height: 0.23rem;
+    background: #0190fe;
+    z-index: 1;
+}
+
+.wizard .steps ul li:after {
+    right: auto;
+    left: 0;
+}
+
+.wizard .steps ul li:first-child:after {
+    display: none;
+}
+
+.wizard .steps ul li:last-child:before {
+    display: none;
+}
+
+.wizard .steps ul li.disabled:before, .wizard .steps ul li.disabled:after {
+    background: #b8beca;
+}
+
+.wizard .steps ul li.disabled .wizard__steps__icon, .wizard .steps ul li.disabled .number {
+    border-color: #b8beca;
+    background: #b8beca;
+    color: #ffffff;
+}
+
+.wizard .steps ul li.disabled a {
+    color: #393749 !important;
+}
+
+@media (max-width: 991px) {
+    .wizard .steps ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
+.wizard .actions {
+    text-align: center;
+}
+
+.wizard .actions li {
+    margin-left: 0 !important;
+}
+
+.wizard .actions li a {
+    background-color: #acb7bf;
+    border-color: #acb7bf;
+    min-width: 9.23rem;
+    text-align: center;
+}
+
+.wizard .actions li a:hover, .wizard .actions li a:active {
+    background-color: #bdc6cc;
+    border-color: #bdc6cc;
+}
+
+.wizard .actions li.disabled a {
+    background-color: #acb7bf !important;
+    border-color: #acb7bf !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.wizard__numbers .number {
+    padding-left: 3px;
+}
+
+.wizard__numbers .steps ul li a .number {
+    display: inline-block !important;
+    line-height: 3.23rem;
+}
+
+.wizard .utils__content > .body input {
+    border-color: #e4e9f0;
+}
+
+.wizard .utils__content > .body input:focus {
+    border-color: #0190fe;
+}

@@ -1,0 +1,86 @@
+/* THEMES: LIGHT */
+body.theme--light .menu-left {
+    background: #fff;
+    border-right: 1px solid #e4e9f0;
+}
+
+body.theme--light .menu-left__item > a {
+    color: #74708d;
+}
+
+body.theme--light .menu-left__item > a:hover, body.theme--light .menu-left__item > a:focus {
+    color: #0190FE;
+}
+
+body.theme--light .menu-left__item > a:active {
+    color: #0190FE;
+    background-color: #e6f8ff;
+}
+
+body.theme--light .menu-left__item.menu-left__submenu:hover > a::after {
+    border-color: transparent #74708d transparent transparent;
+}
+
+body.theme--light .menu-left__item--active > a {
+    background: #e6f8ff;
+}
+
+body.theme--light .menu-left__submenu--toggled.menu-left__item {
+    color: #74708d;
+    background-color: #ffffff;
+}
+
+body.theme--light .menu-left__submenu--toggled.menu-left__item > a .menu-left__icon {
+    color: #8f8ca4;
+}
+
+body.theme--light .menu-left__submenu > .menu-left__list {
+    background: #ffffff;
+}
+
+body.theme--light .menu-left__icon {
+    color: #c7c5d1;
+}
+
+body.theme--light .menu-left__item--active > a > .menu-left__icon,
+body.theme--light .menu-left__item:hover > a > .menu-left__icon,
+body.theme--light .menu-left__item:active > a > .menu-left__icon,
+body.theme--light .menu-left__item:focus > a > .menu-left__icon {
+    color: #8f8ca4;
+}
+
+body.theme--light .menu-left__submenu.menu-left__item > a:after {
+    border-color: transparent #c7c5d1 transparent transparent;
+}
+
+body.theme--light .menu-left__divider {
+    background: #e4e9f0;
+}
+
+body.theme--light .menu-left .jspScrollable .jspDrag:after {
+    background: #e2e1e8 !important;
+}
+
+@media (min-width: 768px) {
+    body.theme--light.config--vertical.config--compact .menu-left__item > a:before {
+        background: #e4e9f0;
+    }
+}
+
+body.theme--light.config--horizontal .menu-left {
+    border-right: none;
+    border-bottom: 1px solid #e4e9f0;
+}
+
+@media (min-width: 768px) {
+    body.theme--light.config--horizontal .menu-left__list--root > li.menu-left__item > a {
+        border-left-color: #e4e9f0;
+    }
+    body.theme--light.config--horizontal .menu-left__list--root > li.menu-left__item:hover > a {
+        background: #e4e9f0;
+        color: #454354;
+    }
+    body.theme--light.config--horizontal .menu-left__list--root > li.menu-left__item:hover > a > .menu-left__icon {
+        color: #8f8ca4;
+    }
+}

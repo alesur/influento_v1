@@ -1,0 +1,54 @@
+.avatar {
+    width: 2.69rem;
+    height: 2.69rem;
+    background-color: #eef0f4;
+    border-color: #b8beca;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-border-radius: 500px;
+            border-radius: 500px;
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.avatar--20 {
+    width: 1.53rem;
+    height: 1.53rem;
+}
+
+.avatar--25 {
+    width: 1.92rem;
+    height: 1.92rem;
+}
+
+.avatar--50 {
+    width: 3.84rem;
+    height: 3.84rem;
+}
+
+.avatar--70 {
+    width: 5.38rem;
+    height: 5.38rem;
+}
+
+.avatar--90 {
+    width: 6.92rem;
+    height: 6.92rem;
+}
+
+.avatar--110 {
+    width: 8.46rem;
+    height: 8.46rem;
+}
+
+.avatar--bordered {
+    border: 4px solid #d2d9e5;
+}
+
+.avatar--borderWhite {
+    border-color: #ffffff;
+}

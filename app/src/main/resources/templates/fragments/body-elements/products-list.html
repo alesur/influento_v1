@@ -1,0 +1,27 @@
+<div class="card-body">
+    <table class="table table-hover nowrap" id="example1">
+        <thead class="thead-default">
+        <tr>
+            <th>Name</th>
+            <th>Date Created</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="products : ${products}">
+            <td th:text="${products.name}">LastIP</td>
+<!--            not done -->
+            <td>2019.12.05</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Date Created</th>
+
+
+        </tr>
+
+        </tfoot>
+    </table>
+</div>

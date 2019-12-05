@@ -1,0 +1,200 @@
+.lockscreen {
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-color: #f2f4f8;
+}
+
+.lockscreen--fullscreen {
+    position: fixed;
+    z-index: 20000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.lockscreen__block {
+    padding: 6.15rem 3.07rem 6.15rem;
+    width: 100%;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 991px) {
+    .lockscreen__block {
+        padding: 6.15rem 1.53rem 6.15rem;
+    }
+}
+
+.lockscreen__block__inner {
+    min-width: 23.07rem;
+    max-width: 38.46rem;
+    margin: 0 auto;
+    padding: 3.84rem 3.07rem 1.53rem;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.lockscreen__block__form {
+    position: relative;
+    z-index: 2;
+}
+
+.lockscreen__block__promo {
+    padding: 0 0 4.61rem;
+    max-width: 61.53rem;
+    font-size: 1.23rem;
+    line-height: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.lockscreen__block__sidebar {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .lockscreen__block--extended .lockscreen__block__inner {
+        max-width: 61.53rem;
+        padding: 6.15rem 6.15rem 3.84rem;
+    }
+    .lockscreen__block--extended .lockscreen__block__form {
+        margin-right: 23.07rem;
+    }
+    .lockscreen__block--extended .lockscreen__block__sidebar {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 23.07rem;
+        padding: 6.15rem 3.07rem;
+        color: #ffffff;
+        background: #222034;
+    }
+    .lockscreen__block--extended .lockscreen__block__sidebar__item {
+        padding-left: 1.53rem;
+        border-left: 2px solid #74708d;
+        margin-bottom: 1.53rem;
+        color: #74708d;
+    }
+    .lockscreen__block--extended .lockscreen__block__sidebar__title {
+        margin-bottom: 1.53rem;
+        line-height: 1.5;
+    }
+    .lockscreen__block--extended .lockscreen__block__sidebar__place {
+        font-size: 1.07rem;
+        font-weight: bold;
+        position: absolute;
+        z-index: 2;
+        bottom: 3.07rem;
+        left: 3.07rem;
+    }
+}
+
+.lockscreen__header {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+    width: 100%;
+    color: #ffffff;
+    padding: 3.07rem;
+}
+
+@media (max-width: 991px) {
+    .lockscreen__header {
+        padding: 3.07rem 1.53rem 3.07rem;
+    }
+}
+
+.lockscreen__header__logo img {
+    max-width: 11.53rem;
+    max-height: 3.84rem;
+}
+
+.lockscreen__header__menu {
+    text-align: right;
+    margin-top: 0.76rem;
+}
+
+@media (max-width: 991px) {
+    .lockscreen__header__menu {
+        text-align: left;
+    }
+}
+
+.lockscreen__header__menu ul {
+    font-size: 1.23rem;
+}
+
+.lockscreen__header__menu ul li {
+    margin-right: 1.53rem;
+    text-transform: uppercase;
+}
+
+.lockscreen__header__menu ul li:last-child {
+    margin-right: 0;
+}
+
+.lockscreen__header__menu ul li.active a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.lockscreen__header__menu ul li a {
+    color: #ffffff !important;
+    line-height: 1.4;
+    display: inline-block;
+    margin-right: 0.76rem;
+    font-weight: bold;
+}
+
+.lockscreen__header__menu ul li a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.lockscreen__footer {
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+    width: 100%;
+    color: white;
+    padding: 3.07rem;
+}
+
+@media (max-width: 991px) {
+    .lockscreen__footer {
+        padding: 3.07rem 1.53rem 3.07rem;
+    }
+}
+
+.lockscreen__footer ul {
+    margin-bottom: 0;
+}
+
+.lockscreen__footer ul li {
+    margin-right: 1.53rem;
+    text-transform: uppercase;
+}
+
+.lockscreen__footer ul li:last-child {
+    margin-right: 0;
+}
+
+.lockscreen__footer ul li a {
+    color: #ffffff;
+    opacity: .7;
+    line-height: 1.4;
+    display: inline-block;
+    margin-right: 0.76rem;
+}
+
+.lockscreen__footer ul li a:hover {
+    opacity: 1;
+}

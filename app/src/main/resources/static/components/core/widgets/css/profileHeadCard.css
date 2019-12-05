@@ -1,0 +1,31 @@
+.ProfileHeadCard {
+    border: 0px solid #ffffff;
+    background: #ffffff;
+    position: relative;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.ProfileHeadCard__head {
+    height: 19.23rem;
+    background: #f2f4f8 center center;
+    -webkit-background-size: cover;
+            background-size: cover;
+    -webkit-border-radius: .25rem;
+            border-radius: .25rem;
+    line-height: 1.1;
+    padding: 1.92rem 2.3rem;
+}
+
+.ProfileHeadCard__left {
+    float: left;
+    padding-left: 1.53rem;
+    margin-top: -3.85rem;
+}
+
+.ProfileHeadCard__right {
+    margin-left: 10.76rem;
+    padding-top: 3.07rem;
+    padding-right: 1.53rem;
+    padding-bottom: 1px;
+}

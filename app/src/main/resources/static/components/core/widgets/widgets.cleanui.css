@@ -1,0 +1,1270 @@
+@charset "UTF-8";
+/*  WIDGETS */
+.ProfileHeadCard {
+    border: 0px solid #ffffff;
+    background: #ffffff;
+    position: relative;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.ProfileHeadCard__head {
+    height: 19.23rem;
+    background: #f2f4f8 center center;
+    -webkit-background-size: cover;
+            background-size: cover;
+    -webkit-border-radius: .25rem;
+            border-radius: .25rem;
+    line-height: 1.1;
+    padding: 1.92rem 2.3rem;
+}
+
+.ProfileHeadCard__left {
+    float: left;
+    padding-left: 1.53rem;
+    margin-top: -3.85rem;
+}
+
+.ProfileHeadCard__right {
+    margin-left: 10.76rem;
+    padding-top: 3.07rem;
+    padding-right: 1.53rem;
+    padding-bottom: 1px;
+}
+
+.avatar {
+    width: 2.69rem;
+    height: 2.69rem;
+    background-color: #eef0f4;
+    border-color: #b8beca;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-border-radius: 500px;
+            border-radius: 500px;
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.avatar--20 {
+    width: 1.53rem;
+    height: 1.53rem;
+}
+
+.avatar--25 {
+    width: 1.92rem;
+    height: 1.92rem;
+}
+
+.avatar--50 {
+    width: 3.84rem;
+    height: 3.84rem;
+}
+
+.avatar--70 {
+    width: 5.38rem;
+    height: 5.38rem;
+}
+
+.avatar--90 {
+    width: 6.92rem;
+    height: 6.92rem;
+}
+
+.avatar--110 {
+    width: 8.46rem;
+    height: 8.46rem;
+}
+
+.avatar--bordered {
+    border: 4px solid #d2d9e5;
+}
+
+.avatar--borderWhite {
+    border-color: #ffffff;
+}
+
+.userCard {
+    background: #ffffff;
+    position: relative;
+    -webkit-border-radius: .25rem;
+            border-radius: .25rem;
+    border: 1px solid #e4e9f0;
+}
+
+@media (max-width: 991px) {
+    .userCard {
+        margin-bottom: 1.35rem;
+    }
+}
+
+.userCard__userName {
+    font-weight: 700;
+}
+
+.userCard--whiteFont .userCard__userName {
+    color: #ffffff;
+}
+
+.userCard--whiteFont .userCard__post {
+    color: #ffffff;
+}
+
+.userCard__post {
+    color: #c0bdd0;
+}
+
+.userCard__plusBtn {
+    font-size: 0;
+    background-color: #ffffff;
+    position: absolute;
+    top: 1.53rem;
+    right: 1.53rem;
+    width: 1.61rem;
+    height: 1.61rem;
+    border: 1px solid #d2d9e5;
+    -webkit-border-radius: 500px;
+            border-radius: 500px;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.userCard__plusBtn:after {
+    content: "";
+    position: absolute;
+    top: 0.23rem;
+    left: 0.69rem;
+    height: 1rem;
+    width: 1px;
+    background: #d2d9e5;
+}
+
+.userCard__plusBtn:before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1px;
+    left: 0.23rem;
+    top: 0.69rem;
+    background: #d2d9e5;
+}
+
+.userCard__plusBtn:hover {
+    opacity: 1;
+}
+
+.infoCard {
+    color: #74708d;
+    background-color: #ffffff;
+    padding: 1.53rem;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    display: block;
+    margin-bottom: 1.53rem;
+}
+
+.infoCard--aroundBorder {
+    border: 1px solid #e4e9f0;
+}
+
+.infoCard--interactive {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.infoCard--whiteFont {
+    color: #ffffff;
+}
+
+.infoCard--whiteFont .infoCard__icon {
+    color: #ffffff;
+}
+
+.infoCard__digit {
+    float: left;
+    margin-right: 1.53rem;
+    font-size: 3.23rem;
+    width: 4.3rem;
+    line-height: 3.84rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.infoCard__digit i {
+    font-size: 2.76rem;
+}
+
+.infoCard__title {
+    font-weight: bold;
+    font-size: 1.23rem;
+}
+
+.infoCard__desc p {
+    margin-bottom: 0;
+}
+
+.infoCard--default, .infoCard--primary, .infoCard--secondary, .infoCard--success, .infoCard--info, .infoCard--warning, .infoCard--danger {
+    color: #ffffff !important;
+}
+
+.infoCard--empty {
+    border: 1px solid #e4e9f0;
+}
+
+.infoCard--default {
+    background: #acb7bf !important;
+    border-bottom-color: #acb7bf;
+}
+
+.infoCard--primary {
+    background: #0190fe !important;
+    border-bottom-color: #0190fe;
+}
+
+.infoCard--secondary {
+    background: #6a7a84 !important;
+    border-bottom-color: #6a7a84;
+}
+
+.infoCard--success {
+    background: #46be8a !important;
+    border-bottom-color: #46be8a;
+}
+
+.infoCard--info {
+    background: #0887c9 !important;
+    border-bottom-color: #0887c9;
+}
+
+.infoCard--warning {
+    background: #f39834 !important;
+    border-bottom-color: #f39834;
+}
+
+.infoCard--danger {
+    background: #fb434a !important;
+    border-bottom-color: #fb434a;
+}
+
+.infoCard--disabled {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.infoCard--squared {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.infoCard--bordered {
+    padding: 0.38rem 0 0.76rem 0;
+    margin-bottom: -0.93rem;
+    margin-top: 0rem;
+    color: #74708d !important;
+    background-color: #ffffff !important;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.infoCard--bordered .infoCard__digit {
+    font-size: 2.15rem;
+    line-height: 2.92rem;
+    height: 1.84rem;
+    display: block;
+    width: auto;
+    min-width: 3.07rem;
+    margin: 0 0.76rem;
+}
+
+.infoCard--bordered .infoCard__digit i {
+    font-size: 1.84rem;
+}
+
+.infoCard--bordered .infoCard__title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.infoCard--bordered .infoCard__desc {
+    padding-top: 0;
+}
+
+.infoCard--bordered .infoCard__desc p {
+    font-size: 0.92rem;
+    margin-bottom: 0.38rem;
+    color: #b8beca;
+}
+
+@media (max-width: 991px) {
+    .infoCard {
+        margin-bottom: 1.23rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+.sliderCard__body {
+    display: block;
+    height: 10.76rem;
+    position: relative;
+    width: 100%;
+    padding: 1.92rem 2.3rem;
+    overflow: hidden;
+}
+
+.sliderCard__icon {
+    display: inline-block;
+    font-size: 6.15rem;
+    position: absolute;
+    z-index: 1;
+    bottom: -3.08rem;
+    right: -1.93rem;
+    opacity: .4;
+}
+
+.chartCard {
+    padding: 1.15rem 2.3rem 1.53rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.chartCard .ct-line {
+    stroke-width: 1px;
+}
+
+.chartCard .ct-series-a .ct-area {
+    fill: rgba(199, 228, 255, 0.5) !important;
+    fill-opacity: 1 !important;
+}
+
+.chartCard .ct-series-a .ct-line {
+    stroke: #004585 !important;
+}
+
+.chartCard__chart {
+    height: 100%;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.chartCard__amount {
+    font-size: 2.76rem;
+    color: #0e0b20;
+    margin-bottom: -0.77rem;
+}
+
+.chartCard__title {
+    color: #74708d;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.paymentCard {
+    padding: 2.3rem 2.3rem;
+    position: relative;
+}
+
+.paymentCard__icon {
+    text-align: center;
+    margin-bottom: 1.15rem;
+}
+
+.paymentCard__icon i {
+    font-size: 4.15rem;
+    color: #b8beca;
+}
+
+.paymentCard__name {
+    display: block;
+    text-align: center;
+    font-size: 1.61rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.paymentCard__number {
+    display: block;
+    text-align: center;
+    font-size: 1.23rem;
+    color: #74708d;
+    margin-bottom: 1.53rem;
+}
+
+.paymentCard__type {
+    display: block;
+    text-align: center;
+    font-size: 1.23rem;
+    margin-bottom: 1.53rem;
+    font-weight: bold;
+    color: #74708d;
+}
+
+.paymentCard__sum {
+    position: absolute;
+    top: 0.76rem;
+    right: -0.77rem;
+    background: #46be8a;
+    color: #ffffff;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 100, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 100, 0.2);
+    padding: 0 1rem;
+    font-weight: bold;
+    font-size: 1.38rem;
+}
+
+@media (max-width: 991px) {
+    .paymentCard__sum {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.paymentCard__footer {
+    text-align: center;
+    border-top: 1px solid #e4e9f0;
+    color: #74708d;
+    padding-top: 0.76rem;
+    margin-bottom: -1.16rem;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.paymentAccount {
+    padding: 2.3rem 2.3rem;
+    position: relative;
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    transition: -webkit-box-shadow .1s ease-in-out;
+    -o-transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out, -webkit-box-shadow .1s ease-in-out;
+}
+
+.paymentAccount:hover {
+    -webkit-box-shadow: 0 0 2.25rem #e1e1e1;
+            box-shadow: 0 0 2.25rem #e1e1e1;
+}
+
+.paymentAccount__icon {
+    position: absolute;
+    top: 1.92rem;
+    right: 2.3rem;
+}
+
+.paymentAccount__icon i {
+    font-size: 3.23rem;
+    color: #b8beca;
+}
+
+.paymentAccount__number {
+    display: block;
+    font-size: 1.61rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.paymentAccount__sum {
+    display: block;
+    font-size: 1.38rem;
+    margin-bottom: 1.53rem;
+    color: #74708d;
+}
+
+@media (max-width: 991px) {
+    .paymentAccount__sum {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.paymentAccount__footer {
+    text-align: center;
+    border-top: 1px solid #e4e9f0;
+    color: #74708d;
+    padding-top: 0.76rem;
+    margin-bottom: -1.16rem;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.paymentTx {
+    padding: 1.15rem 1.92rem;
+    position: relative;
+    border-left: 4px solid #fb434a !important;
+}
+
+.paymentTx--income {
+    border-left: 4px solid #46be8a !important;
+}
+
+.paymentTx--income .paymentTx__icon i {
+    color: #46be8a;
+}
+
+.paymentTx__icon {
+    position: absolute;
+    top: 1.07rem;
+    right: 1.53rem;
+}
+
+.paymentTx__icon i {
+    font-size: 1.84rem;
+    color: #fb434a;
+}
+
+.paymentTx__amount {
+    font-size: 1.38rem;
+    color: #0e0b20;
+    font-weight: bold;
+}
+
+.paymentTx__info {
+    font-size: 1rem;
+    color: #74708d;
+    margin-left: 0.38rem;
+}
+
+@media (max-width: 991px) {
+    .paymentTx__info {
+        right: auto;
+        left: 0.76rem;
+    }
+}
+
+.paymentTx__footer {
+    color: #74708d;
+    padding: 0.76rem 1.92rem;
+    margin: 0.76rem -1.93rem -1.16rem -1.85rem;
+    font-style: italic;
+    font-size: 1rem;
+    background: #f9fafc;
+    -webkit-border-radius: 0 0 7px 7px;
+            border-radius: 0 0 7px 7px;
+}
+
+.crypto #cryptoChart text.version {
+    display: none;
+}
+
+.crypto #cryptoChart .axis path,
+.crypto #cryptoChart .axis line {
+    fill: none;
+    stroke: #0e0b20;
+    shape-rendering: crispEdges;
+}
+
+.crypto #cryptoChart text {
+    fill: #0e0b20;
+}
+
+.crypto #cryptoChart path {
+    fill: none;
+    stroke-width: 1px;
+}
+
+.crypto #cryptoChart path.candle {
+    stroke: #000000;
+}
+
+.crypto #cryptoChart path.candle.body {
+    stroke-width: 0;
+}
+
+.crypto #cryptoChart path.candle {
+    fill: #777777;
+    stroke: #777777;
+}
+
+.crypto #cryptoChart path.candle.up {
+    fill: #06A35A;
+    stroke: #06A35A;
+}
+
+.crypto #cryptoChart path.candle.down {
+    fill: #C23F3F;
+    stroke: #C23F3F;
+}
+
+.crypto #cryptoChart .closeValue.annotation.up path {
+    fill: #06A35A;
+}
+
+.crypto #cryptoChart .closeValue.annotation text {
+    fill: #ffffff;
+    fill: #ffffff;
+    font-size: 10px;
+}
+
+.crypto #cryptoChart path.volume {
+    fill: #555555;
+}
+
+.crypto #cryptoChart .indicator-plot path.line {
+    fill: none;
+    stroke-width: 1;
+}
+
+.crypto #cryptoChart .ma-0 path.line {
+    stroke: #1f77b4;
+}
+
+.crypto #cryptoChart .ma-1 path.line {
+    stroke: #aec7e8;
+}
+
+.crypto #cryptoChart .ma-2 path.line {
+    stroke: #ff7f0e;
+}
+
+.crypto #cryptoChart button {
+    position: absolute;
+    right: 110px;
+    top: 25px;
+}
+
+.crypto #cryptoChart path.macd {
+    stroke: #aec7e8;
+}
+
+.crypto #cryptoChart path.signal {
+    stroke: #FF9999;
+}
+
+.crypto #cryptoChart path.zero {
+    stroke: #BBBBBB;
+    stroke-dasharray: 0;
+    stroke-opacity: 0.5;
+}
+
+.crypto #cryptoChart path.difference {
+    fill: #555555;
+}
+
+.crypto #cryptoChart path.rsi {
+    stroke: #aec7e8;
+}
+
+.crypto #cryptoChart path.overbought, .crypto #cryptoChart path.oversold {
+    stroke: #FF9999;
+    stroke-dasharray: 5, 5;
+}
+
+.crypto #cryptoChart path.middle, .crypto #cryptoChart path.zero {
+    stroke: #BBBBBB;
+    stroke-dasharray: 5, 5;
+}
+
+.crypto #cryptoChart .analysis path, .crypto #cryptoChart .analysis circle {
+    stroke: yellow;
+    stroke-width: 0.7;
+}
+
+.crypto #cryptoChart .interaction path, .crypto #cryptoChart .interaction circle {
+    pointer-events: all;
+}
+
+.crypto #cryptoChart .interaction .body {
+    cursor: move;
+}
+
+.crypto #cryptoChart .trendlines .interaction .start, .crypto #cryptoChart .trendlines .interaction .end {
+    cursor: nwse-resize;
+}
+
+.crypto #cryptoChart .trendline circle {
+    stroke-width: 0;
+    display: none;
+}
+
+.crypto #cryptoChart .mouseover .trendline path {
+    stroke-width: 1;
+}
+
+.crypto #cryptoChart .mouseover .trendline circle {
+    stroke-width: 1;
+    fill: yellow;
+    display: inline;
+}
+
+.crypto #cryptoChart .supstance path {
+    stroke-dasharray: 2, 2;
+}
+
+.crypto #cryptoChart .supstances .interaction path {
+    pointer-events: all;
+    cursor: ns-resize;
+}
+
+.crypto #cryptoChart .supstances .axisannotation {
+    display: none;
+}
+
+.crypto #cryptoChart .supstances .mouseover .axisannotation {
+    display: inline;
+}
+
+.crypto #cryptoChart .supstances .axisannotation path {
+    fill: #806517;
+    stroke: none;
+}
+
+.crypto #cryptoChart .mouseover .supstance path {
+    stroke-width: 1.5;
+}
+
+.crypto #cryptoChart .crosshair {
+    cursor: crosshair;
+}
+
+.crypto #cryptoChart .crosshair path.wire {
+    stroke: #555555;
+    stroke-dasharray: 1, 1;
+}
+
+.crypto #cryptoChart .crosshair .axisannotation path {
+    fill: #777777;
+}
+
+.crypto #cryptoChart .scope-composed-annotation text {
+    fill: #ffffff;
+    font-size: 10px;
+}
+
+.crypto__table .table tr:first-child td {
+    border-top: 1px solid #e4e9f0;
+}
+
+.crypto__table .table tr:last-child td {
+    border-bottom: 1px solid #e4e9f0;
+}
+
+.crypto__table .table tr td:first-child {
+    border-left: 1px solid #e4e9f0;
+}
+
+.crypto__table .table tr td:last-child {
+    border-right: 1px solid #e4e9f0;
+}
+
+.crypto__listMobile {
+    display: none;
+    margin-bottom: 2.3rem;
+}
+
+@media (max-width: 991px) {
+    .crypto__listMobile {
+        display: block;
+    }
+}
+
+.crypto__list {
+    float: left;
+    width: 200px;
+}
+
+@media (max-width: 991px) {
+    .crypto__list {
+        display: none;
+    }
+}
+
+.crypto__mobileList {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .crypto__mobileList {
+        display: block;
+        margin-bottom: 1.53rem;
+    }
+}
+
+.crypto__listTitle {
+    font-weight: bold;
+    display: block;
+}
+
+.crypto__listItem {
+    display: block;
+    background: #ffffff;
+    padding: 0.76rem 1.53rem;
+    margin-bottom: 0.76rem;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    color: #0e0b20;
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.crypto__listItem:hover, .crypto__listItem--current {
+    background: #0190fe;
+    color: #ffffff;
+}
+
+.crypto__listItem:hover .crypto__listPercents span, .crypto__listItem--current .crypto__listPercents span {
+    color: #ffffff !important;
+}
+
+.crypto__listItem:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.crypto__listItem--negative .crypto__listPercents span {
+    color: #f75535;
+}
+
+.crypto__listItem--negative .crypto__listPercents span:after {
+    content: ' ↓';
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.crypto__listCurrency {
+    float: left;
+}
+
+.crypto__listCurrency span {
+    display: block;
+    font-weight: bold;
+}
+
+.crypto__listPercents {
+    float: right;
+    text-align: right;
+}
+
+.crypto__listPercents span {
+    display: block;
+    font-weight: bold;
+    color: #00a45b;
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.crypto__listPercents span:after {
+    content: ' ↑';
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.crypto__content {
+    margin-left: 230px;
+}
+
+@media (max-width: 991px) {
+    .crypto__content {
+        margin-left: 0px;
+    }
+}
+
+.crypto__warning {
+    padding-top: 1.53rem !important;
+    padding-bottom: 1.53rem !important;
+    cursor: pointer;
+}
+
+.crypto__order {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media (max-width: 1199px) {
+    .crypto__order {
+        display: block;
+    }
+}
+
+.crypto__orderLeft {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.crypto__orderLeft .table {
+    text-align: right;
+}
+
+.crypto__orderLeft .table td:last-child a {
+    color: #0190fe;
+    font-weight: 700;
+}
+
+.crypto__orderMiddle {
+    width: 19.23rem;
+    padding: 0 2.3rem;
+}
+
+@media (max-width: 1199px) {
+    .crypto__orderMiddle {
+        width: auto;
+        margin: 1.53rem auto 3.07rem;
+    }
+}
+
+.crypto__orderRight {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.crypto__orderRight .table td:first-child a {
+    color: #0190fe;
+    font-weight: 700;
+}
+
+.crypto__form .form-control {
+    padding-left: 0.76rem;
+}
+
+.crypto__formLabel {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.92rem;
+}
+
+.crypto__orderPagination {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.crypto__orderPagination .pagination {
+    margin-left: auto;
+}
+
+.progressCard__head {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1.15rem;
+}
+
+.progressCard__name {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.progressCard__title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.38rem;
+}
+
+.progressCard__note {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.progressCard__value {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.76rem;
+    line-height: 1;
+    margin-top: 0.76rem;
+    margin-bottom: 0.76rem;
+    margin-left: auto;
+}
+
+.progressCard__line {
+    margin-bottom: 0.38rem;
+}
+
+.progressCard__lineDescr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: #b8beca;
+}
+
+.shortItemInfo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    border-top: 1px dashed #e4e9f0;
+    padding-top: 1.15rem;
+}
+
+.shortItemInfo--large .shortItemInfo__name {
+    font-size: 1.23rem;
+}
+
+.shortItemInfo--large .shortItemInfo__note {
+    font-size: 1rem;
+}
+
+.shortItemInfo--large .shortItemInfo__actionData {
+    font-size: 1.53rem;
+}
+
+.shortItemInfo:first-child {
+    border-top: none;
+}
+
+.shortItemInfo--borderedBottom {
+    border-bottom: 1px dashed #e4e9f0;
+}
+
+.shortItemInfo__img {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    margin-right: 1.15rem;
+    margin-bottom: 1.15rem;
+}
+
+.shortItemInfo__img img {
+    width: 4.23rem;
+    height: 4.23rem;
+}
+
+.shortItemInfo__description {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding-right: 1.15rem;
+    margin-right: auto;
+    margin-bottom: 1.15rem;
+}
+
+.shortItemInfo__name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.shortItemInfo__note {
+    font-weight: 300;
+    font-size: 0.84rem;
+    margin-bottom: 0;
+    color: #b8beca;
+}
+
+.shortItemInfo__actionData {
+    margin-bottom: 1.15rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+    font-size: 1.23rem;
+}
+
+.graphCard__lonelyValue {
+    font-size: 2.53rem;
+    font-weight: 700;
+}
+
+.graphCard__chartist {
+    position: relative;
+}
+
+.graphCard__chartist--centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-area {
+    fill: #0190fe !important;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-line {
+    stroke: #0190fe !important;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-point {
+    stroke: #0190fe !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-area {
+    fill: #46be8a !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-line {
+    stroke: #46be8a !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-point {
+    stroke: #46be8a !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-area {
+    fill: #f39834 !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-line {
+    stroke: #f39834 !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-point {
+    stroke: #f39834 !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-area {
+    fill: #fb434a !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-line {
+    stroke: #fb434a !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-point {
+    stroke: #fb434a !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-area {
+    fill: #acb7bf !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-line {
+    stroke: #acb7bf !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-point {
+    stroke: #acb7bf !important;
+}
+
+.graphCard__table thead th, .graphCard__table thead td {
+    border: none;
+    color: #74708d;
+    border-bottom-style: dashed !important;
+}
+
+.graphCard__table td {
+    color: #b8beca;
+    font-weight: 300;
+    border-top-style: dashed;
+}
+
+.graphCard__donutChartist--widthCenterData .ct-label-pie {
+    display: none;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #d2d9e5;
+    -webkit-transform: translate(1%, 6%);
+        -ms-transform: translate(1%, 6%);
+            transform: translate(1%, 6%);
+}
+
+.graphCard__donutChartist--widthCenterData .ct-label-pie:first-of-type {
+    display: block;
+}
+
+.graphCard__donutChartist--widthCenterData .ct-slice-donut {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.graphCard__donutChartist--example .ct-series-a path {
+    stroke: #46be8a;
+}
+
+.graphCard__donutChartist--example .ct-series-b path {
+    stroke: #0190fe;
+}
+
+.graphCard__donutChartist--example .ct-series-c path {
+    stroke: #fb434a;
+}
+
+.graphCard__donutChartistArea-1 {
+    height: 13.07rem;
+}
+
+.graphCard__donuts {
+    color: #b8beca;
+}
+
+.graphCard__donuts--centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}

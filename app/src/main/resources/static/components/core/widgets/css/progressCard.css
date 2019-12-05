@@ -1,0 +1,76 @@
+.progressCard__head {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1.15rem;
+}
+
+.progressCard__name {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+.progressCard__title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.38rem;
+}
+
+.progressCard__note {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.progressCard__value {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.76rem;
+    line-height: 1;
+    margin-top: 0.76rem;
+    margin-bottom: 0.76rem;
+    margin-left: auto;
+}
+
+.progressCard__line {
+    margin-bottom: 0.38rem;
+}
+
+.progressCard__lineDescr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: #b8beca;
+}

@@ -1,0 +1,66 @@
+/* CARDS */
+.card, .card-header, .list-group-item, .card-footer {
+    border-color: #e4e9f0;
+}
+
+.card-header, .card-footer {
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    background: #ffffff;
+}
+
+.card-header:last-child, .card-footer:last-child {
+    -webkit-border-radius: 0 0 -webkit-calc(7px - 1px) -webkit-calc(7px - 1px);
+            border-radius: 0 0 calc(7px - 1px) calc(7px - 1px);
+}
+
+.card-header:first-child, .card-footer:first-child {
+    -webkit-border-radius: -webkit-calc(7px - 1px) -webkit-calc(7px - 1px) 0 0;
+            border-radius: calc(7px - 1px) calc(7px - 1px) 0 0;
+}
+
+@media (max-width: 991px) {
+    .card-header, .card-footer {
+        padding-left: 1.53rem;
+        padding-right: 1.53rem;
+    }
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding: 1.92rem 2.3rem;
+}
+
+@media (max-width: 991px) {
+    .card-body {
+        padding-left: 1.53rem;
+        padding-right: 1.53rem;
+    }
+}
+
+.card {
+    margin-bottom: 2.3rem;
+    -webkit-border-radius: 7px;
+            border-radius: 7px;
+}
+
+.card--withShadow {
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    transition: -webkit-box-shadow .1s ease-in-out;
+    -o-transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out, -webkit-box-shadow .1s ease-in-out;
+}
+
+.card--withShadow:hover {
+    -webkit-box-shadow: 0 0 2.25rem #e1e1e1;
+            box-shadow: 0 0 2.25rem #e1e1e1;
+}
+
+.card--fullHeight {
+    height: -webkit-calc(100% - 2.3rem);
+    height: calc(100% - 2.3rem);
+}

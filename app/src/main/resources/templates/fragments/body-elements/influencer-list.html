@@ -1,0 +1,38 @@
+<div class="card-body">
+    <table class="table table-hover nowrap" id="example1">
+        <thead class="thead-default">
+        <tr>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Country</th>
+            <th>Last Contacted</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="influencer : ${influencer}">
+            <td><a href="javascript: void(0);" class="utils__link--underlined" th:text="${influencer.profileName}">Name</a></td>
+            <td th:text="${influencer.notes}">Notes</td>
+            <td th:text="${influencer.country.name}">LastIP</td>
+<!--            not done -->
+            <td>2019.12.05</td>
+            <td><span class="badge badge-primary">Processing</span></td>
+            <td><a href="javascript: void(0);" class="utils__link--underlined mr-2"><i class="icmn-pencil"><!-- --></i>Edit</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Country</th>
+            <th>Last Contacted</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+.chartCard {
+    padding: 1.15rem 2.3rem 1.53rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.chartCard .ct-line {
+    stroke-width: 1px;
+}
+
+.chartCard .ct-series-a .ct-area {
+    fill: rgba(199, 228, 255, 0.5) !important;
+    fill-opacity: 1 !important;
+}
+
+.chartCard .ct-series-a .ct-line {
+    stroke: #004585 !important;
+}
+
+.chartCard__chart {
+    height: 100%;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.chartCard__amount {
+    font-size: 2.76rem;
+    color: #0e0b20;
+    margin-bottom: -0.77rem;
+}
+
+.chartCard__title {
+    color: #74708d;
+    text-transform: uppercase;
+    font-weight: bold;
+}

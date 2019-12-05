@@ -1,0 +1,30 @@
+<nav class="menu-left">
+    <div class="menu-left__lock menu-left__action--menu-toggle">
+        <div class="menu-left__pin-button">
+            <div><!-- --></div>
+        </div>
+    </div>
+    <div class="menu-left__logo">
+        <a th:href="@{'/'}">
+            <img src="/components/dummy-assets/common/img/logo-inverse.png" alt="" />
+        </a>
+    </div>
+    <div class="menu-left__inner">
+        <ul class="menu-left__list menu-left__list--root">
+            <li class="menu-left__item">
+                <a th:href="@{'/'}">
+                    <span class="menu-left__icon icmn-home"></span>
+                    Main
+                </a>
+            </li>
+
+            <li  class="menu-left__item">
+                <a th:href="@{'/products'}">
+                    <span class="menu-left__icon icmn-stack"></span>
+                    Products
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

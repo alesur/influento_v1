@@ -1,0 +1,156 @@
+.graphCard__lonelyValue {
+    font-size: 2.53rem;
+    font-weight: 700;
+}
+
+.graphCard__chartist {
+    position: relative;
+}
+
+.graphCard__chartist--centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-area {
+    fill: #0190fe !important;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-line {
+    stroke: #0190fe !important;
+}
+
+.graphCard__chartist--primary .ct-series-a .ct-point {
+    stroke: #0190fe !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-area {
+    fill: #46be8a !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-line {
+    stroke: #46be8a !important;
+}
+
+.graphCard__chartist--success .ct-series-a .ct-point {
+    stroke: #46be8a !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-area {
+    fill: #f39834 !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-line {
+    stroke: #f39834 !important;
+}
+
+.graphCard__chartist--warning .ct-series-a .ct-point {
+    stroke: #f39834 !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-area {
+    fill: #fb434a !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-line {
+    stroke: #fb434a !important;
+}
+
+.graphCard__chartist--danger .ct-series-a .ct-point {
+    stroke: #fb434a !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-area {
+    fill: #acb7bf !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-line {
+    stroke: #acb7bf !important;
+}
+
+.graphCard__chartist--default .ct-series-a .ct-point {
+    stroke: #acb7bf !important;
+}
+
+.graphCard__table thead th, .graphCard__table thead td {
+    border: none;
+    color: #74708d;
+    border-bottom-style: dashed !important;
+}
+
+.graphCard__table td {
+    color: #b8beca;
+    font-weight: 300;
+    border-top-style: dashed;
+}
+
+.graphCard__donutChartist--widthCenterData .ct-label-pie {
+    display: none;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #d2d9e5;
+    -webkit-transform: translate(1%, 6%);
+        -ms-transform: translate(1%, 6%);
+            transform: translate(1%, 6%);
+}
+
+.graphCard__donutChartist--widthCenterData .ct-label-pie:first-of-type {
+    display: block;
+}
+
+.graphCard__donutChartist--widthCenterData .ct-slice-donut {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.graphCard__donutChartist--example .ct-series-a path {
+    stroke: #46be8a;
+}
+
+.graphCard__donutChartist--example .ct-series-b path {
+    stroke: #0190fe;
+}
+
+.graphCard__donutChartist--example .ct-series-c path {
+    stroke: #fb434a;
+}
+
+.graphCard__donutChartistArea-1 {
+    height: 13.07rem;
+}
+
+.graphCard__donuts {
+    color: #b8beca;
+}
+
+.graphCard__donuts--centered {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}

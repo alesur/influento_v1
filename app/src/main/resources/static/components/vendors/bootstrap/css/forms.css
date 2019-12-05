@@ -1,0 +1,116 @@
+/* FORMS */
+input::-webkit-input-placeholder {
+    color: #b8beca !important;
+}
+
+input::-moz-placeholder {
+    color: #b8beca !important;
+}
+
+input:-moz-placeholder {
+    color: #b8beca !important;
+}
+
+input:-ms-input-placeholder {
+    color: #b8beca !important;
+}
+
+.form-actions {
+    border-top: 1px solid #e4e9f0;
+    padding-top: 1.53rem;
+    margin: 1.53rem 0;
+}
+
+.form-control {
+    font-family: "Nunito Sans", sans-serif;
+    padding: 0.84rem 1.23rem;
+    border-color: #e4e9f0;
+    color: #74708d;
+}
+
+.form-control.form-control-rounded {
+    -webkit-border-radius: 500px;
+            border-radius: 500px;
+}
+
+.form-control:focus {
+    border-color: #0190fe;
+}
+
+.form-control.input-sm {
+    padding: 0.3rem 0.61rem;
+}
+
+.col-form-label {
+    padding-top: 0.69rem;
+    padding-bottom: 0.69rem;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #eef0f4;
+}
+
+.input-group-addon {
+    border-color: #e4e9f0;
+    background-color: #eef0f4;
+}
+
+span.input-group-addon {
+    outline: none !important;
+}
+
+.form-group.has-danger .form-control {
+    border-color: #fb434a;
+}
+
+.form-group.has-success .form-control {
+    border-color: #46be8a;
+}
+
+.form-group.has-warning .form-control {
+    border-color: #f39834;
+}
+
+.form-group.has-focused .form-control {
+    border-color: #0190fe;
+}
+
+.form-input-icon {
+    position: relative;
+}
+
+.form-input-icon > i {
+    color: #b8beca;
+    position: absolute;
+    margin: 1rem 0.15rem 0.3rem 0.76rem;
+    z-index: 3;
+    width: 1.23rem;
+    font-size: 1.23rem;
+    text-align: center;
+    left: 0;
+}
+
+.form-input-icon .form-control {
+    padding-left: 2.61rem;
+}
+
+.form-input-icon.form-input-icon-right > i {
+    left: auto;
+    right: 0.23rem;
+    margin: 1rem 0.76rem 0.3rem 0.15rem;
+}
+
+.form-input-icon.form-input-icon-right .form-control {
+    padding-left: 1.23rem;
+    padding-right: 2.61rem;
+}
+
+.input-group .add-on.input-group-addon {
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.input-group .add-on.input-group-addon i {
+    line-height: 2.2;
+}
