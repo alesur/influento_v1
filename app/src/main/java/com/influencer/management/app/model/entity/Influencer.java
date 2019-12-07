@@ -18,29 +18,52 @@ public class Influencer {
     @Size(min = 2, message = "Name must be at least 2 characters long")
     private String profileName;
 
-
     private String notes;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
+    /**
+     * Here is added the field for the Personal Details Object of the Influencer
+     * @return
+     */
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "personal_details_id", nullable = true)
     private PersonalDetails personalDetails;
 
+    /**
+     * Here is added the field for the Instagram Profile Object of the Influencer
+     * @return
+     */
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "instagram_profile_id", nullable = true)
     private InstagramProfile instagramProfile;
 
+    /**
+     * Here is added the List of the days when Influencer has been contacted
+     * @return
+     */
     @OneToMany(mappedBy = "influencer")
-//    @JoinColumn(name = "influencer_id", nullable = false)
     private List<DayContacted> daysContacted;
+
+
+    @ManyToMany
+    @JoinTable(name = "products_influencer",
+    joinColumns = @JoinColumn(name = "influencer_id"),
+    inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> productsSent;
 
     public String lastDayContacted(){
         System.out.println("size of daysContacted: " + daysContacted.size());
         return daysContacted.get(daysContacted.size()-1).getDate();
     }
+
+    /**
+     *
+     * HERE are 2 "convenience" methods, to be able to add dayContacted and productSent  to the two lists
+     */
+
 
  public void addDate(DayContacted dayContacted){
         if(daysContacted==null){
@@ -49,4 +72,11 @@ public class Influencer {
 
         daysContacted.add(dayContacted);
  }
+
+    public void addProduct(Product productSent){
+        if(productsSent==null){
+            productsSent = new ArrayList<>();
+        }
+        productsSent.add(productSent);
+    }
 }
