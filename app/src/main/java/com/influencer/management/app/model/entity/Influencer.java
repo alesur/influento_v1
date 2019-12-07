@@ -47,7 +47,17 @@ public class Influencer {
     @OneToMany(mappedBy = "influencer")
     private List<DayContacted> daysContacted;
 
+/**
+ * Here is added the List of the reviews the Influencer has done
+ *
+ */
+        @OneToMany(mappedBy = "influencer")
+        private List<Review> reviews;
 
+    /**
+     * Here is added the List of the products sent to the Influencer
+     *
+     */
     @ManyToMany
     @JoinTable(name = "products_influencer",
     joinColumns = @JoinColumn(name = "influencer_id"),
@@ -61,7 +71,7 @@ public class Influencer {
 
     /**
      *
-     * HERE are 2 "convenience" methods, to be able to add dayContacted and productSent  to the two lists
+     * HERE are 3 "convenience" methods, to be able to add dayContacted, productSent, and Review  to the three lists
      */
 
 
@@ -78,5 +88,12 @@ public class Influencer {
             productsSent = new ArrayList<>();
         }
         productsSent.add(productSent);
+    }
+
+    public void addReview(Review review){
+        if(reviews==null){
+            reviews = new ArrayList<>();
+        }
+        reviews.add(review);
     }
 }
