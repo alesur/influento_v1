@@ -15,7 +15,8 @@
         <tr th:each="influencer : ${influencer}">
             <td><a href="javascript: void(0);" class="utils__link--underlined" th:text="${influencer.profileName}">Name</a></td>
             <td th:text="${influencer.notes}">Notes</td>
-            <td th:text="${influencer.country.name}">LastIP</td>
+            <td th:text="${influencer.country.name}"></td>
+            <td th:text="${influencer.lastDayContacted()}"></td>
 <!--            not done -->
             <td>2019.12.05</td>
             <td><span class="badge badge-primary">Processing</span></td>

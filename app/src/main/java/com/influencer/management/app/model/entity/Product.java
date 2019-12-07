@@ -1,4 +1,4 @@
-package com.influencer.management.app.model.data;
+package com.influencer.management.app.model.entity;
 
 import lombok.Data;
 
