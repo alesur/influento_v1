@@ -29,7 +29,7 @@ public class Influencer {
 
     /**
      * Here is added the field for the Personal Details Object of the Influencer
-     * @return
+     *
      */
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "personal_details_id", nullable = true)
@@ -37,7 +37,7 @@ public class Influencer {
 
     /**
      * Here is added the field for the Instagram Profile Object of the Influencer
-     * @return
+     *
      */
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "instagram_profile_id", nullable = true)
@@ -45,7 +45,7 @@ public class Influencer {
 
     /**
      * Here is added the List of the days when Influencer has been contacted
-     * @return
+     *
      */
     @OneToMany(mappedBy = "influencer")
     private List<DayContacted> daysContacted;
@@ -76,7 +76,6 @@ public class Influencer {
      *
      * HERE are 3 "convenience" methods, to be able to add dayContacted, productSent, and Review  to the three lists
      */
-
 
  public void addDate(DayContacted dayContacted){
         if(daysContacted==null){

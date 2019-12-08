@@ -2,6 +2,7 @@ package com.influencer.management.app.controller;
 
 import com.influencer.management.app.model.dao.ProductRepository;
 
+import com.influencer.management.app.model.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
