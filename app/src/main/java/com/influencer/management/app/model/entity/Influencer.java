@@ -4,8 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 @Table(name = "influencer")
@@ -23,6 +25,7 @@ public class Influencer {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
+
 
     /**
      * Here is added the field for the Personal Details Object of the Influencer
@@ -96,4 +99,5 @@ public class Influencer {
         }
         reviews.add(review);
     }
+
 }
