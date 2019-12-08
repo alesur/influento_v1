@@ -6,49 +6,52 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-                        <form method="POST" tth:action="@{/influencer/edit}" th:object="${influencer}">
+                        <form method="POST" th:action="@{/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}" />
                             <input type="text"  th:value="${influencer.profileName}" th:field="*{profileName}" class="form-control" id="l301">
+                            <input type="hiden"  value="1" name="country" class="form-control" id="l301">
+                            <input type="hiden"  value="1" name="personalDetails" class="form-control" id="l301">
+                            <input type="hiden"  value="0" name="instagramProfile" class="form-control" id="l301">
                     </div>
                 </div>
             </div>
             <br/>
             <h4 class="text-black mb-3"><strong>Personal Info</strong></h4>
             <!--            First Name -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l30">First Name</label>
-                        <input type="text" th:value="${influencer.personalDetails.firstName}" th:field="*{influencer.personalDetails.firstName}"    class="form-control" id="l30">
-                    </div>
-                </div>
-                <!--            Last Name -->
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l31">Last Name</label>
-                        <input type="text" th:value="${influencer.personalDetails.lastName}" th:field="*{influencer.personalDetails.lastName}" class="form-control" id="l31">
-                    </div>
-                </div>
-            </div>
-            <br/>
-            <h4 class="text-black mb-3"><strong>Contacts</strong></h4>
-            <!--            Phone -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l30">Phone</label>
-                        <input type="text" th:value="${influencer.personalDetails.phone}" th:field="*{influencer.personalDetails.phone}" class="form-control" id="l30">
-                    </div>
-                </div>
-                <!--            Email -->
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l31">Email</label>
-                        <input type="text" th:value="${influencer.personalDetails.email}" th:field="*{influencer.personalDetails.email}"  class="form-control" id="l31">
-                    </div>
-                </div>
-            </div>
-            <br/>
+<!--            <div class="row">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="l30">First Name</label>-->
+<!--                        <input type="text" th:value="${influencer.personalDetails.firstName}" th:field="*{influencer.personalDetails.firstName}"    class="form-control" id="l30">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;            Last Name &ndash;&gt;-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="l31">Last Name</label>-->
+<!--                        <input type="text" th:value="${influencer.personalDetails.lastName}" th:field="*{influencer.personalDetails.lastName}" class="form-control" id="l31">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <br/>-->
+<!--            <h4 class="text-black mb-3"><strong>Contacts</strong></h4>-->
+<!--            &lt;!&ndash;            Phone &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="l30">Phone</label>-->
+<!--                        <input type="text" th:value="${influencer.personalDetails.phone}" th:field="*{influencer.personalDetails.phone}" class="form-control" id="l30">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;            Email &ndash;&gt;-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="l31">Email</label>-->
+<!--                        <input type="text" th:value="${influencer.personalDetails.email}" th:field="*{influencer.personalDetails.email}"  class="form-control" id="l31">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <br/>-->
             <!--            Country -->
             <div class="form-group">
                 <label for="l13">Country</label>
@@ -58,19 +61,19 @@
                         id="l13">
 <!--                        <option th:each="influencer.country} : ${influencer.country}}" >a-->
 <!--                        </option>-->
-                        <option th:value="${influencer.country.name}" th:text="${influencer.country.name}">Lithuania</option>
+                        <option th:value="${influencer.country.id}" th:text="${influencer.country.name}">test</option>
                     </select>
             </div>
             <br/>
             <!--            Address-->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l30">Address</label>
-                        <input type="text" th:value="${influencer.personalDetails.address}" th:field="*{influencer.personalDetails.address}" class="form-control" id="l30">
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="l30">Address</label>-->
+<!--                        <input type="text" th:value="${influencer.personalDetails.address}" th:field="*{influencer.personalDetails.address}" class="form-control" id="l30">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <!--            Description -->
             <div class="form-group">
@@ -80,20 +83,20 @@
             <br/>
 
                         Status
-            <div class="form-group">
-                <label for="l13">Status</label>
-                <select class="form-control" id="l13">
-                    <option value="1">Contacted</option>
-                    <option value="2">Active</option>
-                    <option value="3">First Review</option>
-                    <option value="4">Second Review</option>
-                    <option value="5">Completed</option>
-                    <option value="6">Rejected</option>
-                </select>
-            </div>
-            <br/>
+<!--            <div class="form-group">-->
+<!--                <label for="l13">Status</label>-->
+<!--                <select class="form-control" id="l13">-->
+<!--                    <option value="1">Contacted</option>-->
+<!--                    <option value="2">Active</option>-->
+<!--                    <option value="3">First Review</option>-->
+<!--                    <option value="4">Second Review</option>-->
+<!--                    <option value="5">Completed</option>-->
+<!--                    <option value="6">Rejected</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <br/>-->
 
-                        Action Buttons
+            <!--            Action Buttons-->
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary width-150">Save</button>
 
