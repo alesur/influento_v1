@@ -13,14 +13,14 @@
         </thead>
         <tbody>
         <tr th:each="influencer : ${influencer}">
-            <td><a href="javascript: void(0);" class="utils__link--underlined" th:text="${influencer.profileName}">Name</a></td>
+            <td><a th:href="@{'https://www.instagram.com/' + ${influencer.profileName}}"  th:target="_blank" class="utils__link--underlined" th:text="${influencer.profileName}">Name</a></td>
             <td th:text="${influencer.notes}">Notes</td>
             <td th:text="${influencer.country.name}"></td>
             <td th:text="${influencer.lastDayContacted()}"></td>
 <!--            not done -->
 <!--            <td>2019.12.05</td>-->
             <td><span class="badge badge-primary">Processing</span></td>
-            <td><a href="javascript: void(0);" class="utils__link--underlined mr-2"><i class="icmn-pencil"><!-- --></i>Edit</a></td>
+            <td><a th:href="@{'/edit/' + ${influencer.id}}" class="utils__link--underlined mr-2"><i class="icmn-pencil"><!-- --></i>Edit</a></td>
         </tr>
         </tbody>
         <tfoot>
