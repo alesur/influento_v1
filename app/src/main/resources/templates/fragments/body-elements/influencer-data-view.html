@@ -1,42 +1,123 @@
 <div class="card-body">
     <div class="row">
         <div class="col-lg-8">
-            <h5 class="text-black mb-3"><strong>Social</strong></h5>
+            <h4 class="text-black mb-3"><strong>Social</strong></h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l301">Instagram username</label>
+<!--                        <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">-->
+<!--                            <input type="hidden" th:field="*{id}" />-->
+                        <p th:text="${influencer.profileName}"  class="form-control" id="l301">Influencer ProfileName</p>
+                    </div>
+                </div>
+            </div>
 
-            <span th:text="|The name is ${influencer.profileName}|"></span>
             <br/>
-
-            <h5 class="text-black mb-3"><strong>Personal Info</strong></h5>
-
-            <!--            First + Last Name -->
-            <address>
-                <strong>Full Name</strong>
-                <br>
-                <p th:text="${influencer.personalDetails.firstName} + ' ' + ${influencer.personalDetails.lastName}"></p>
-            </address>
+            <h4 class="text-black mb-3"><strong>Personal Info</strong></h4>
+            <!--            First Name -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">First Name</label>
+                        <p th:text="${influencer.personalDetails.firstName}" class="form-control" id="l30">Influencer First Name</p>
+                    </div>
+                </div>
+                <!--            Last Name -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l31">Last Name</label>
+                        <p  th:text="${influencer.personalDetails.lastName}"  class="form-control" id="l31">Influencer Last Name</p>
+                    </div>
+                </div>
+            </div>
             <br/>
-            <h5 class="text-black mb-3"><strong>Contacts</strong></h5>
-            <br/>
+            <h4 class="text-black mb-3"><strong>Contacts</strong></h4>
             <!--            Phone -->
-
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">Phone</label>
+                        <p th:text="${influencer.personalDetails.phone}" class="form-control" id="l30">Influencer Phone</p>
+                    </div>
+                </div>
+                <!--            Email -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l31">Email</label>
+                        <p th:text="${influencer.personalDetails.email}" class="form-control" id="l31">Influencer Email</p>
+                    </div>
+                </div>
+            </div>
             <br/>
-
-
             <!--            Country -->
-
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">Country</label>
+                        <p th:text="${influencer.country.name}" class="form-control" id="l30">Influencer Country</p>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
             <br/>
-            <!--            Address-->
-
-
-            <!--            Description -->
-
+                <!--            Address-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="l30">Address</label>
+                            <p th:text="${influencer.personalDetails.address}" class="form-control" id="l30">Influencer Address</p>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <!--            Notes    -->
+                <div class="form-group">
+                    <label class="form-control-label" for="l15">Notes</label><br/>
+                    <textarea readonly th:text="${influencer.notes}" rows="3" id="l15">Notes of client</textarea>
+                </div>
+                <br/>
+            <!--            Status  -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">Status</label>
+                        <p th:text="${influencer.status}" class="form-control" id="l30">Influencer Status</p>
+                    </div>
+                </div>
+            </div>
             <br/>
+        </div>
+        <div class="col-lg-4">
+         <!--         Reviews       -->
+                <div class="mb-5">
+                    <h5 class="text-black">
+                        <strong>Reviews</strong>
+                    </h5>
+<!--                    <table class="table table-hover nowrap" id="example1">-->
+                    <table class="table table-hover nowrap" >
+                        <thead class="thead-default">
+                        <tr>
+                            <th>Review Links</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="review : ${influencer.reviews}">
+                            <td><a th:href="@{${review.link}}"  th:target="_blank" class="utils__link--underlined" th:text="${review.link}">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;color: #0b58a2">Add New Review NOT WORKING--></td>
+                            <td>
+                                <div data-th-replace="/fragments/body-elements/addButton.html"></div>
+                            </td>
+                        </tr>
+                        </tbody>
 
-
-            <br/>
-
-            <!--            Action Buttons-->
+                <!-- End Highlight -->
+            </div>
+            <div class="col-lg-4">
 
         </div>
     </div>
+</div>
 </div>

@@ -77,12 +77,20 @@ public class Influencer {
         Date max= new Date(Long.MIN_VALUE);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String strDate = null;
+        String resultDate = null;
+
+        if(daysContacted==null){
+            max = new Date();
+            strDate = dateFormat.format(max);
+            resultDate = strDate.substring(0,16);
+            return resultDate;
+        }
 
         for(DayContacted d:daysContacted){
             if(d.getCreatedAt()==null){
                 max = new Date();
                  strDate = dateFormat.format(max);
-                 String resultDate = strDate.substring(0,16);
+                 resultDate = strDate.substring(0,16);
                 return resultDate;
             }
             if(d.getCreatedAt().compareTo(max)>0){
@@ -90,15 +98,8 @@ public class Influencer {
             }
         }
         strDate = dateFormat.format(max);
-        String resultDate = strDate.substring(0,16);
+        resultDate = strDate.substring(0,16);
         return resultDate;
-
-        /**
-         * My first logic to return LastDayContacted
-         */
-//        System.out.println("size of daysContacted: " + daysContacted.size());
-//        String day = daysContacted.get(daysContacted.size()-1).getDate();
-//        return day;
     }
 
     /**
