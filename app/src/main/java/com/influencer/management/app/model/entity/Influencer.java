@@ -68,8 +68,20 @@ public class Influencer {
     private List<Product> productsSent;
 
     public String lastDayContacted(){
+        /**
+         * Trying to develop new logic for LastDayContacted
+         */
+
+
+
+
+
+        /**
+         * My first logic to return LastDayContacted
+         */
         System.out.println("size of daysContacted: " + daysContacted.size());
-        return daysContacted.get(daysContacted.size()-1).getDate();
+        String day = daysContacted.get(daysContacted.size()-1).getDate();
+        return day;
     }
 
     /**

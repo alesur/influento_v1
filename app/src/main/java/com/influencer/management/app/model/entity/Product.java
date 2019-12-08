@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,6 +28,9 @@ public class Product {
     @Size(min = 3, message = "Product name must be at least 3 characters long")
     private String name;
 
+    @Size(min = 3, message = "Product name must be at least 3 characters long")
+    private String link;
+
 
     @ManyToMany
     @JoinTable(name = "products_influencer",
@@ -36,10 +40,10 @@ public class Product {
 
     @Column(name = "created_at", updatable = false)
     @CreationTimestamp
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
     @Column(name = "updated_at")
     @UpdateTimestamp
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
 
 }
