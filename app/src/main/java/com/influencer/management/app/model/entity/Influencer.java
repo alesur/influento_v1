@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +24,8 @@ public class Influencer {
     private String profileName;
 
     private String notes;
+
+    private String status;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "country_id", nullable = false)
@@ -73,18 +77,23 @@ public class Influencer {
          * Trying to develop new logic for LastDayContacted
          */
         Date max= new Date(Long.MIN_VALUE);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String strDate = null;
 
         for(DayContacted d:daysContacted){
             if(d.getCreatedAt()==null){
-                return "no date recorded";
+                max = new Date();
+                 strDate = dateFormat.format(max);
+                 String resultDate = strDate.substring(0,16);
+                return resultDate;
             }
             if(d.getCreatedAt().compareTo(max)>0){
                 max = d.getCreatedAt();
             }
         }
-        System.out.println(max.toString());
-        return max.toString();
-
+        strDate = dateFormat.format(max);
+        String resultDate = strDate.substring(0,16);
+        return resultDate;
 
         /**
          * My first logic to return LastDayContacted
@@ -120,5 +129,7 @@ public class Influencer {
         }
         reviews.add(review);
     }
+
+
 
 }
