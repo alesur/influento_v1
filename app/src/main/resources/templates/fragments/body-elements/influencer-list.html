@@ -17,8 +17,6 @@
             <td th:text="${influencer.notes}">Notes</td>
             <td th:text="${influencer.country.name}"></td>
             <td th:text="${influencer.lastDayContacted()}"></td>
-<!--            not done -->
-<!--            <td>2019.12.05</td>-->
             <td><span class="badge badge-primary">Processing</span></td>
             <td><a th:href="@{'/edit/' + ${influencer.id}}" class="utils__link--underlined mr-2"><i class="icmn-pencil"><!-- --></i>Edit</a></td>
         </tr>
