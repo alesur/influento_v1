@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -23,14 +24,15 @@ public class InfluencerController {
 
     @GetMapping()
     public String influencerList(Model model) {
-        model.addAttribute("influencer", influencerRepository.findAll());
-
+        List<Influencer> influencers = influencerRepository.findAll();
+        model.addAttribute("influencer", influencers);
         return "index.html";
     }
 
     @GetMapping("/view/{id}")
-    public String view(Model model) {
-        model.addAttribute("influencer", influencerRepository.findAll());
+    public String view(@PathVariable int id, Model model) {
+        Influencer influencer = influencerRepository.getOne(id);
+        model.addAttribute("influencer", influencer);
 
         return "influencer-view.html";
     }
