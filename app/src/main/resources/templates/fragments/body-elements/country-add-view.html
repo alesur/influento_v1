@@ -1,0 +1,22 @@
+<div class="card-body">
+<div class="row">
+    <div class="col-lg-8">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="l301">Title</label>
+                   <form method="POST"  th:action="@{/countries/edit}" th:object="${country}">
+                       <input type="hidden" th:field="*{id}" />
+                    <input type="text" th:value="${country.name}" th:field="*{name}" class="form-control" id="l301">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary width-150">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card-body">
+    <table class="table table-hover nowrap" id="example1">
+        <thead class="thead-default">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="countries : ${countries}">
+            <td th:text="${countries.name}">LastIP</td>
+<!--            not done -->
+
+            <td>
+                <a th:href="@{'/countries/edit/' + ${countries.id}}" class="utils__link--underlined mr-2"><i class="icmn-pencil"><!-- --></i> Edit</a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+
+
+        </tr>
+
+        </tfoot>
+    </table>
+</div>
