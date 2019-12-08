@@ -40,4 +40,5 @@ public class DayContacted {
         this.date = date;
     }
 
+
 }

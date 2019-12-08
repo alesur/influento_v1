@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -71,17 +72,26 @@ public class Influencer {
         /**
          * Trying to develop new logic for LastDayContacted
          */
+        Date max= new Date(Long.MIN_VALUE);
 
-
-
+        for(DayContacted d:daysContacted){
+            if(d.getCreatedAt()==null){
+                return "no date recorded";
+            }
+            if(d.getCreatedAt().compareTo(max)>0){
+                max = d.getCreatedAt();
+            }
+        }
+        System.out.println(max.toString());
+        return max.toString();
 
 
         /**
          * My first logic to return LastDayContacted
          */
-        System.out.println("size of daysContacted: " + daysContacted.size());
-        String day = daysContacted.get(daysContacted.size()-1).getDate();
-        return day;
+//        System.out.println("size of daysContacted: " + daysContacted.size());
+//        String day = daysContacted.get(daysContacted.size()-1).getDate();
+//        return day;
     }
 
     /**
