@@ -25,6 +25,8 @@ public class Influencer {
 
     private String notes;
 
+    private String status;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
@@ -127,5 +129,7 @@ public class Influencer {
         }
         reviews.add(review);
     }
+
+
 
 }
