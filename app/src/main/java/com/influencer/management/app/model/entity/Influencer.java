@@ -20,7 +20,6 @@ public class Influencer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Size(min = 2, message = "Name must be at least 2 characters long")
     private String profileName;
 
     private String notes;

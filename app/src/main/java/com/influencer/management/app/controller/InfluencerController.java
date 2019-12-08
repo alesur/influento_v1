@@ -9,21 +9,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("/")
 public class InfluencerController {
 
     @Autowired
     private InfluencerRepository influencerRepository;
 
-    @GetMapping("/")
+    @GetMapping()
     public String influencerList(Model model) {
         model.addAttribute("influencer", influencerRepository.findAll());
 
         return "index.html";
+    }
+
+    @GetMapping("/view/{id}")
+    public String view(Model model) {
+        model.addAttribute("influencer", influencerRepository.findAll());
+
+        return "influencer-view.html";
     }
 
     @GetMapping("/edit/{id}")
@@ -36,13 +45,15 @@ public class InfluencerController {
         return "influencer-edit.html";
     }
 
-    @PostMapping("/influencer/edit")
+    @PostMapping("/edit")
     public String editpost(@Valid Influencer influencer) {
 
         influencerRepository.save(influencer);
 
         return "redirect:/";
     }
+
+
 
 
 }
