@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head data-th-replace="/fragments/headerElements.html"></head>
+
+<body class="config--vertical config--borderLess menu-left--colorful">
+<nav data-th-replace="/fragments/side-menu/sideNavigation.html"></nav>
+
+<div data-th-replace="/fragments/top-menu/navigation.html"></div>
+
+<div class="utils__content">
+    <div class="card">
+        <div class="card-header">
+        <span class="utils__title">
+            <strong>Influencer Info</strong>
+        </span>
+        </div>
+        <div data-th-replace="/fragments/body-elements/influencer-data-view.html"></div>
+    </div>
+    <script src="/js/dataTableFunctions.js"></script>
+</div>
+</body>
+</html>
