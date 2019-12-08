@@ -52,13 +52,13 @@ public class ProductController {
     }
 
     @GetMapping("/add")
-    public String showFormForAdd(Model theModel) {
+    public String showFormForAdd(Model model) {
 
         Product product = new Product();
 
-        theModel.addAttribute("product", product);
+        model.addAttribute("product", product);
 
-        return "/product-add.html";
+        return "product-add.html";
     }
 
 }

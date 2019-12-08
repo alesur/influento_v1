@@ -9,9 +9,7 @@
                         <form method="POST" th:action="@{/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}" />
                             <input type="text"  th:value="${influencer.profileName}" th:field="*{profileName}" class="form-control" id="l301">
-                            <input type="hiden"  value="1" name="country" class="form-control" id="l301">
-                            <input type="hiden"  value="1" name="personalDetails" class="form-control" id="l301">
-                            <input type="hiden"  value="0" name="instagramProfile" class="form-control" id="l301">
+                            <input type="hiden"  value="2" name="country" class="form-control" id="l301">
                     </div>
                 </div>
             </div>
@@ -53,17 +51,17 @@
 <!--            </div>-->
 <!--            <br/>-->
             <!--            Country -->
-            <div class="form-group">
-                <label for="l13">Country</label>
-                <select
+<!--            <div class="form-group">-->
+<!--                <label for="l13">Country</label>-->
+<!--                <select-->
 
-                        class="form-control"
-                        id="l13">
-<!--                        <option th:each="influencer.country} : ${influencer.country}}" >a-->
-<!--                        </option>-->
-                        <option th:value="${influencer.country.id}" th:text="${influencer.country.name}">test</option>
-                    </select>
-            </div>
+<!--                        class="form-control"-->
+<!--                        id="l13">-->
+<!--&lt;!&ndash;                        <option th:each="influencer.country} : ${influencer.country}}" >a&ndash;&gt;-->
+<!--&lt;!&ndash;                        </option>&ndash;&gt;-->
+<!--                        <option th:value="${influencer.country.id}" th:text="${influencer.country.name}">test</option>-->
+<!--                    </select>-->
+<!--            </div>-->
             <br/>
             <!--            Address-->
 <!--            <div class="row">-->

@@ -54,7 +54,15 @@ public class InfluencerController {
 
         return "redirect:/";
     }
+    @GetMapping("/add")
+    public String showFormForAdd(Model model) {
 
+        Influencer influencer = new Influencer();
+
+        model.addAttribute("influencer", influencer);
+
+        return "influencer-edit.html";
+    }
 
 
 

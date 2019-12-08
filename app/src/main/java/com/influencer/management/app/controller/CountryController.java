@@ -53,11 +53,11 @@ public class CountryController {
     }
 
     @GetMapping("/add")
-    public String showFormForAdd(Model theModel) {
+    public String showFormForAdd(Model model) {
 
         Country country = new Country();
 
-        theModel.addAttribute("country", country);
+        model.addAttribute("country", country);
 
         return "/country-add.html";
     }

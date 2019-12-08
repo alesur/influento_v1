@@ -23,6 +23,10 @@ public class PersonalDetails {
 
     private String address;
 
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "influencer_id")
+    private Influencer influencer;
+
 
 
 

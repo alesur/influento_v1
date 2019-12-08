@@ -35,16 +35,15 @@ public class Influencer {
      * Here is added the field for the Personal Details Object of the Influencer
      *
      */
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "personal_details_id", nullable = true)
+    @OneToOne(mappedBy = "influencer")
     private PersonalDetails personalDetails;
 
     /**
      * Here is added the field for the Instagram Profile Object of the Influencer
      *
      */
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "instagram_profile_id", nullable = true)
+
+    @OneToOne(mappedBy = "influencer")
     private InstagramProfile instagramProfile;
 
     /**
