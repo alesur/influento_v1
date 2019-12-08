@@ -8,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.validation.Valid;
 
 @Controller
 public class InfluencerController {
@@ -23,13 +27,21 @@ public class InfluencerController {
     }
 
     @GetMapping("/edit/{id}")
-    public String edit(@PathVariable int id, Model model) {
+    public String editget(@PathVariable int id, Model model) {
 
         Influencer influencer = influencerRepository.getOne(id);
 
         model.addAttribute("influencer", influencer);
 
         return "influencer-edit.html";
+    }
+
+    @PostMapping("/influencer/edit")
+    public String editpost(@Valid Influencer influencer) {
+
+        influencerRepository.save(influencer);
+
+        return "redirect:/";
     }
 
 
