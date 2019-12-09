@@ -71,7 +71,7 @@ public class InfluencerController {
         personalDetailsReposiroty.save(personalDetails);
         instagramProfileReposiroty.save(instagramProfile);
 
-        return "redirect:/";
+        return "redirect:/influencer";
     }
 
     @GetMapping("/add")
