@@ -6,7 +6,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-                        <form method="POST" th:action="@{/edit}" th:object="${influencer}">
+                        <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}"/>
                             <input type="hidden" th:field="*{personalDetails}"/>
                             <input type="hidden" th:field="*{instagramProfile}"/>

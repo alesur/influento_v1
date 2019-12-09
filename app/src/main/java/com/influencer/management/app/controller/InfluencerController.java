@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/influencer")
 public class InfluencerController {
 
     @Autowired
@@ -59,6 +59,7 @@ public class InfluencerController {
         model.addAttribute("influencer", influencer);
         model.addAttribute("country", countryList);
         model.addAttribute("personalDetails", personalDetails);
+        model.addAttribute("instagramProfile", instagramProfile);
 
         return "influencer-edit.html";
     }
