@@ -6,8 +6,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-<!--                        <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">-->
-<!--                            <input type="hidden" th:field="*{id}" />-->
+
                         <p th:text="${influencer.profileName}"  class="form-control" id="l301">Influencer ProfileName</p>
                     </div>
                 </div>
@@ -87,7 +86,15 @@
                 </div>
             </div>
             <br/>
+            <div class="form-actions">
+                <a th:href="@{'/edit/' + ${id}}"
+                   class="btn btn-primary width-150">
+                    Edit
+                </a>
+            </div>
         </div>
+
+
         <div class="col-lg-4">
          <!--         Reviews       -->
                 <div class="mb-5">
@@ -118,6 +125,7 @@
             <div class="col-lg-4">
 
         </div>
+
     </div>
 </div>
 </div>

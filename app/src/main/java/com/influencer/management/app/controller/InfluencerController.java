@@ -1,8 +1,10 @@
 package com.influencer.management.app.controller;
 
+import com.influencer.management.app.model.dao.CountryRepository;
 import com.influencer.management.app.model.dao.InfluencerRepository;
-import com.influencer.management.app.model.entity.Influencer;
-import com.influencer.management.app.model.entity.Product;
+import com.influencer.management.app.model.dao.InstagramProfileRepository;
+import com.influencer.management.app.model.dao.PersonalDetailsReposiroty;
+import com.influencer.management.app.model.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,15 @@ public class InfluencerController {
     @Autowired
     private InfluencerRepository influencerRepository;
 
+    @Autowired
+    private CountryRepository countryRepository;
+
+    @Autowired
+    private PersonalDetailsReposiroty personalDetailsReposiroty;
+
+    @Autowired
+    private InstagramProfileRepository instagramProfileReposiroty;
+
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
@@ -40,20 +51,28 @@ public class InfluencerController {
     @GetMapping("/edit/{id}")
     public String editget(@PathVariable int id, Model model) {
 
+        List<Country> countryList = countryRepository.findAll();
         Influencer influencer = influencerRepository.getOne(id);
+        PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
+        InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
 
         model.addAttribute("influencer", influencer);
+        model.addAttribute("country", countryList);
+        model.addAttribute("personalDetails", personalDetails);
 
         return "influencer-edit.html";
     }
 
     @PostMapping("/edit")
-    public String editpost(@Valid Influencer influencer) {
+    public String editpost(@Valid Influencer influencer, PersonalDetails personalDetails, InstagramProfile instagramProfile) {
 
         influencerRepository.save(influencer);
+        personalDetailsReposiroty.save(personalDetails);
+        instagramProfileReposiroty.save(instagramProfile);
 
         return "redirect:/";
     }
+
     @GetMapping("/add")
     public String showFormForAdd(Model model) {
 
@@ -63,9 +82,6 @@ public class InfluencerController {
 
         return "influencer-edit.html";
     }
-
-
-
 
 
 }

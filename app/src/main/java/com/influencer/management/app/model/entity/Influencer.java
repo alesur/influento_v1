@@ -3,6 +3,7 @@ package com.influencer.management.app.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import java.text.DateFormat;
@@ -31,19 +32,24 @@ public class Influencer {
     private Country country;
 
 
+
     /**
      * Here is added the field for the Personal Details Object of the Influencer
      *
      */
-    @OneToOne(mappedBy = "influencer")
+
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "personal_details_id", unique = true)
     private PersonalDetails personalDetails;
+
 
     /**
      * Here is added the field for the Instagram Profile Object of the Influencer
      *
      */
 
-    @OneToOne(mappedBy = "influencer")
+    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "instagram_profile_id")
     private InstagramProfile instagramProfile;
 
     /**

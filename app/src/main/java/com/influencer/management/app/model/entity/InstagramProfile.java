@@ -21,8 +21,5 @@ public class InstagramProfile {
 
     private int averageComments;
 
-    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "influencer_id")
-    private Influencer influencer;
 
 }
