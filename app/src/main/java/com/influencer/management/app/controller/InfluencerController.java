@@ -1,9 +1,6 @@
 package com.influencer.management.app.controller;
 
-import com.influencer.management.app.model.dao.CountryRepository;
-import com.influencer.management.app.model.dao.InfluencerRepository;
-import com.influencer.management.app.model.dao.InstagramProfileRepository;
-import com.influencer.management.app.model.dao.PersonalDetailsReposiroty;
+import com.influencer.management.app.model.dao.*;
 import com.influencer.management.app.model.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +27,9 @@ public class InfluencerController {
     @Autowired
     private InstagramProfileRepository instagramProfileReposiroty;
 
+    @Autowired
+    private ReviewRepository reviewRepository;
+
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
@@ -44,6 +44,7 @@ public class InfluencerController {
         Country country = countryRepository.getOne(id);
         PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
+        Review review = new Review();
 
 
 
@@ -51,9 +52,11 @@ public class InfluencerController {
         model.addAttribute("country", country);
         model.addAttribute("personalDetails", personalDetails);
         model.addAttribute("instagramProfile", instagramProfile);
+        model.addAttribute("review", review);
 
         return "influencer-view.html";
     }
+
 
     @GetMapping("/edit/{id}")
     public String editget(@PathVariable int id, Model model) {
@@ -69,6 +72,15 @@ public class InfluencerController {
         model.addAttribute("instagramProfile", instagramProfile);
 
         return "influencer-edit.html";
+    }
+
+    @PostMapping("/view/{id}/addReview")
+    public String addReview(@ModelAttribute("review") Review theReview,@PathVariable int id) {
+        Influencer influencer = influencerRepository.getOne(id);
+        theReview.setId(0);
+        theReview.setInfluencerf(influencer);
+        reviewRepository.save(theReview);
+        return "redirect:/influencer";
     }
 
     @PostMapping("/edit")

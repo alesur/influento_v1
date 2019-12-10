@@ -1,4 +1,7 @@
 <div class="card-body">
+    <div class="form-actions">
+        <a th:href="@{'/influencer/edit/' + ${id}}" class="btn btn-primary width-150">Edit</a>
+    </div>
     <div class="row">
         <div class="col-lg-8">
             <h4 class="text-black mb-3"><strong>Social</strong></h4>
@@ -6,8 +9,13 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-
                         <p th:text="${influencer.profileName}"  class="form-control" id="l301">Influencer ProfileName</p>
+                        <label for="l301">Instagram followers</label>
+                        <p th:text="${influencer.instagramProfile.followersNumbers}"  class="form-control" id="l301">Instagram followers</p>
+                        <label for="l301">Instagram average likes</label>
+                        <p th:text="${influencer.instagramProfile.averageLikes}"  class="form-control" id="l301">Instagram followers</p>
+                        <label for="l301">Instagram average comments</label>
+                        <p th:text="${influencer.instagramProfile.averageComments}"  class="form-control" id="l301">Instagram followers</p>
                     </div>
                 </div>
             </div>
@@ -57,11 +65,9 @@
                         <p th:text="${influencer.country.name}" class="form-control" id="l30">Influencer Country</p>
                     </div>
                 </div>
-                <br/><br/>
-            </div>
-            <br/>
+
                 <!--            Address-->
-                <div class="row">
+<!--                <div class="row">-->
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="l30">Address</label>
@@ -69,40 +75,49 @@
                         </div>
                     </div>
                 </div>
-                <br/>
+            </div>
+        <!--            Status  -->
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="l30">Status</label>
+                <p th:text="${influencer.status}" class="form-control" id="l30">Influencer Status</p>
+            </div>
+        </div>
+    </div>
                 <!--            Notes    -->
+        <div class="col-lg-6">
                 <div class="form-group">
                     <label class="form-control-label" for="l15">Notes</label><br/>
                     <textarea readonly th:text="${influencer.notes}" class="form-control" rows="3" id="l15">Notes of client</textarea>
                 </div>
-
-
-                <br/>
-            <!--            Status  -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="l30">Status</label>
-                        <p th:text="${influencer.status}" class="form-control" id="l30">Influencer Status</p>
-                    </div>
-                </div>
-            </div>
-            <br/>
-            <div class="form-actions">
-                <a th:href="@{'/influencer/edit/' + ${id}}"
-                   class="btn btn-primary width-150">
-                    Edit
-                </a>
-            </div>
         </div>
 
-
-        <div class="col-lg-4">
-         <!--         Reviews       -->
+        <!--         Days Contacted       -->
+    <div class="col-lg-4">
+        <div class="mb-5">
+<!--            <h5 class="text-black">-->
+<!--                <strong>Days Contacted</strong>-->
+<!--            </h5>-->
+                <!--                    <table class="table table-hover nowrap" id="example1">-->
+                <table class="table table-hover nowrap" >
+                    <thead class="thead-default">
+                    <tr>
+                        <th>Dates Contacted</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="dateContacted : ${influencer.daysContacted}">
+                        <td th:text="${dateContacted.date}">Day Contacted</td>
+                    </tr>
+                    </tbody>
+                </table>
+        </div>
+    <!--         Reviews       -->
+    <div class="col-lg-4">
                 <div class="mb-5">
-                    <h5 class="text-black">
-                        <strong>Reviews</strong>
-                    </h5>
+<!--                    <h5 class="text-black">-->
+<!--                        <strong>Reviews</strong>-->
+<!--                    </h5>-->
 <!--                    <table class="table table-hover nowrap" id="example1">-->
                     <table class="table table-hover nowrap" >
                         <thead class="thead-default">
@@ -114,20 +129,18 @@
                         <tr th:each="review : ${influencer.reviews}">
                             <td><a th:href="@{${review.link}}"  th:target="_blank" class="utils__link--underlined" th:text="${review.link}">Link</a></td>
                         </tr>
-                        <tr>
-                            <td style="text-align: right;color: #0b58a2">Add New Review NOT WORKING--></td>
-                            <td>
-                                <div data-th-replace="/fragments/body-elements/addButton.html"></div>
-                            </td>
-                        </tr>
                         </tbody>
+                    </table>
+                    Add Review
 
-                <!-- End Highlight -->
+                    <form action="#" th:action="@{${#httpServletRequest.requestURI} + '/addReview'}" th:object="${review}" method="post">
+                        <input type="text" th:field="*{link}" placeholder="enter link of new review" style="width: 300px;">
+<!--                        <input type="hidden" th:value="${influencer}" th:field="*{influencerf}">-->
+                        <button type="submit" >Save</button>
+                    </form>
+
             </div>
-            <div class="col-lg-4">
-
         </div>
-
     </div>
 </div>
 </div>

@@ -19,14 +19,16 @@ public class Review {
 
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "influencer_id")
-    private Influencer influencer;
+    private Influencer influencerf;
 
     public String getLink() {
         return link;
     }
 
-    public void setLink(String date) {
+    public void setLink(String link) {
         this.link = link;
     }
+
+
 
 }

@@ -1,13 +1,9 @@
 package com.influencer.management.app.model.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -61,7 +57,7 @@ public class Influencer {
  * Here is added the List of the reviews the Influencer has done
  *
  */
-        @OneToMany(mappedBy = "influencer")
+        @OneToMany(mappedBy = "influencerf")
         private List<Review> reviews;
 
     /**
