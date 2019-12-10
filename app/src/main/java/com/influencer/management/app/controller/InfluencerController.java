@@ -80,7 +80,7 @@ public class InfluencerController {
         theReview.setId(0);
         theReview.setInfluencerf(influencer);
         reviewRepository.save(theReview);
-        return "redirect:/influencer";
+        return "redirect:/influencer/view/{id}";
     }
 
     @PostMapping("/edit")
