@@ -1,7 +1,4 @@
 <div class="card-body">
-    <div class="form-actions">
-        <a th:href="@{'/influencer/edit/' + ${id}}" class="btn btn-primary width-150">Edit</a>
-    </div>
     <div class="row">
         <div class="col-lg-8">
             <h4 class="text-black mb-3"><strong>Social</strong></h4>
@@ -9,13 +6,16 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-                        <p th:text="${influencer.profileName}"  class="form-control" id="l301">Influencer ProfileName</p>
+                        <p th:text="${influencer.profileName}" class="form-control" id="l301">Influencer ProfileName</p>
                         <label for="l301">Instagram followers</label>
-                        <p th:text="${instagramProfile.followersNumbers}"  class="form-control" id="l301">Instagram followers</p>
+                        <p th:text="${instagramProfile.followersNumbers}" class="form-control" id="l301">Instagram
+                            followers</p>
                         <label for="l301">Instagram average likes</label>
-                        <p th:text="${instagramProfile.averageLikes}"  class="form-control" id="l301">Instagram followers</p>
+                        <p th:text="${instagramProfile.averageLikes}" class="form-control" id="l301">Instagram
+                            followers</p>
                         <label for="l301">Instagram average comments</label>
-                        <p th:text="${instagramProfile.averageComments}"  class="form-control" id="l301">Instagram followers</p>
+                        <p th:text="${instagramProfile.averageComments}" class="form-control" id="l301">Instagram
+                            followers</p>
                     </div>
                 </div>
             </div>
@@ -27,14 +27,15 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l30">First Name</label>
-                        <p th:text="${personalDetails.firstName}" class="form-control" id="l30">Influencer First Name</p>
+                        <p th:text="${personalDetails.firstName}" class="form-control" id="l30">Influencer First
+                            Name</p>
                     </div>
                 </div>
                 <!--            Last Name -->
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l31">Last Name</label>
-                        <p  th:text="${personalDetails.lastName}"  class="form-control" id="l31">Influencer Last Name</p>
+                        <p th:text="${personalDetails.lastName}" class="form-control" id="l31">Influencer Last Name</p>
                     </div>
                 </div>
             </div>
@@ -66,81 +67,100 @@
                     </div>
                 </div>
 
-                <!--            Address-->
-<!--                <div class="row">-->
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label for="l30">Address</label>
-                            <p th:text="${personalDetails.address}" class="form-control" id="l30">Influencer Address</p>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">Address</label>
+                        <p th:text="${personalDetails.address}" class="form-control" id="l30">Influencer Address</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="l30">Status</label>
+                        <p th:text="${influencer.status}" class="form-control" id="l30">Influencer Status</p>
                     </div>
                 </div>
             </div>
-        <!--            Status  -->
-        <div class="col-lg-6">
             <div class="form-group">
-                <label for="l30">Status</label>
-                <p th:text="${influencer.status}" class="form-control" id="l30">Influencer Status</p>
+                <label class="form-control-label" for="l15">Notes</label><br/>
+                <textarea readonly th:text="${influencer.notes}" class="form-control" rows="3"
+                          id="l15">Notes of client</textarea>
             </div>
         </div>
-    </div>
-                <!--            Notes    -->
-        <div class="col-lg-6">
-                <div class="form-group">
-                    <label class="form-control-label" for="l15">Notes</label><br/>
-                    <textarea readonly th:text="${influencer.notes}" class="form-control" rows="3" id="l15">Notes of client</textarea>
-                </div>
-        </div>
 
-        <!--         Days Contacted       -->
-    <div class="col-lg-4">
-        <div class="mb-5">
-<!--            <h5 class="text-black">-->
-<!--                <strong>Days Contacted</strong>-->
-<!--            </h5>-->
-                <!--                    <table class="table table-hover nowrap" id="example1">-->
-                <table class="table table-hover nowrap" >
-                    <thead class="thead-default">
+    </div>
+
+    <br/>
+    <br/>
+
+    <!--    2 Table Block -->
+    <div class="row">
+        <!--        Dates Contacted Table -->
+        <div class="col-lg-6">
+            <h5 class="text-black"><strong>Dates Contacted</strong></h5>
+            <div class="mb-5">
+                <table class="table">
+                    <thead>
                     <tr>
-                        <th>Dates Contacted</th>
+                        <th>#</th>
+                        <th>Date Contacted</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="dateContacted : ${influencer.daysContacted}">
+                    <tr th:each="dateContacted, dateStat : ${influencer.daysContacted}">
+                        <td th:text="${dateStat.count}"></td>
                         <td th:text="${dateContacted.date}">Day Contacted</td>
+                        <td><a th:href="@{#}"
+                               class="utils__link--underlined mr-2"
+                               onclick="if (!(confirm('Are you sure you want to delete this Date?'))) return false">
+                            <i class="icmn-bin2"></i> Delete</a>
+                        </td>
+
+                    </tbody>
+                </table>
+                <div class="form-group has-focused">
+                    <form>
+                        <input type="text"  class="form-control"
+                               placeholder="Enter contacted date..." id="l8">
+                        <button class="btn btn-primary btn-sm" type="submit">Add Date</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--        Reviews Table -->
+        <div class="col-lg-6">
+            <h5 class="text-black"><strong>Reviews</strong></h5>
+            <div class="mb-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Review Link</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="review, stat: ${influencer.reviews}">
+                        <td th:text="${stat.count}"></td>
+                        <td><a th:href="@{${review.link}}" th:target="_blank" class="utils__link--underlined"
+                               th:text="${review.link}">Link</a></td>
+                        <td><a th:href="@{#}"
+                               class="utils__link--underlined mr-2"
+                               onclick="if (!(confirm('Are you sure you want to delete this review?'))) return false">
+                            <i class="icmn-bin2"></i> Delete</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
-        </div>
-    <!--         Reviews       -->
-    <div class="col-lg-4">
-                <div class="mb-5">
-<!--                    <h5 class="text-black">-->
-<!--                        <strong>Reviews</strong>-->
-<!--                    </h5>-->
-<!--                    <table class="table table-hover nowrap" id="example1">-->
-                    <table class="table table-hover nowrap" >
-                        <thead class="thead-default">
-                        <tr>
-                            <th>#</th>
-                            <th>Review Links</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="review, stat: ${influencer.reviews}">
-                            <td th:text="${stat.count}"></td>
-                            <td><a th:href="@{${review.link}}"  th:target="_blank" class="utils__link--underlined" th:text="${review.link}">Link</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    Add Review
-
-                    <form action="#" th:action="@{${#httpServletRequest.requestURI} + '/addReview'}" th:object="${review}" method="post">
-                        <input type="text" th:field="*{link}" placeholder="enter link of new review" style="width: 300px;">
-<!--                        <input type="hidden" th:value="${influencer}" th:field="*{influencerf}">-->
-                        <button type="submit" >Save</button>
+                <div class="form-group has-focused">
+                    <form th:action="@{${#httpServletRequest.requestURI} + '/addReview'}" th:object="${review}"
+                          method="post">
+                        <input type="text" th:field="*{link}" class="form-control"
+                               placeholder="Enter link of new review..." id="l8">
+                        <button class="btn btn-primary btn-sm" type="submit">Add Review</button>
                     </form>
-
+                </div>
             </div>
         </div>
     </div>

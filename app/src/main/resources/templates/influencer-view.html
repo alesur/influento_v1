@@ -14,6 +14,7 @@
         <div class="card-header">
         <span class="utils__title">
             <h1><strong>Influencer Info</strong></h1>
+        <a th:href="@{'/influencer/edit/' + ${id}}" class="btn btn-sm btn-outline-primary mr-2 mb-2">Edit profile</a>
         </span>
         </div>
         <div data-th-replace="/fragments/body-elements/influencer-data-view.html"></div>
