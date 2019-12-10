@@ -12,4 +12,10 @@ public class HomeController {
 
         return "redirect:/influencer";
     }
+
+    @GetMapping("/dashboard")
+    public String dashboard() {
+
+        return "dashboard.html";
+    }
 }
