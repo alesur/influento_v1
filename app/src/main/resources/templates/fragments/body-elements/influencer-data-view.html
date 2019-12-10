@@ -122,11 +122,13 @@
                     <table class="table table-hover nowrap" >
                         <thead class="thead-default">
                         <tr>
+                            <th>#</th>
                             <th>Review Links</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="review : ${influencer.reviews}">
+                        <tr th:each="review, stat: ${influencer.reviews}">
+                            <td th:text="${stat.count}"></td>
                             <td><a th:href="@{${review.link}}"  th:target="_blank" class="utils__link--underlined" th:text="${review.link}">Link</a></td>
                         </tr>
                         </tbody>
