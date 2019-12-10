@@ -1,158 +1,156 @@
 <div class="utils__content">
-<!-- START: dashboard alpha -->
-<nav class="utils__top-sidebar utils__top-sidebar--bg">
+    <!-- START: dashboard alpha -->
+    <nav class="utils__top-sidebar utils__top-sidebar--bg">
 
     <span class="font-size-18 d-block mb-2">
 
         <strong>Dashboard</strong>
         <small class="text-muted">statistics, charts, recent info and reports</small>
     </span>
-</nav>
-<div class="row">
-    <div class="col-lg-12">
-        <div class="utils__title utils__title--flat mb-3">
-            <span class="text-uppercase font-size-16">Total Statistics</span>
-        </div>
-        <div class="row">
-            <div class="col-xl-4">
-                <div class="card chartCard">
-                    <div class="chartCard__chart">
-                        <div class="chart-area-1 chartist"></div>
-                    </div>
-                    <div class="chartCard__amount">1240</div>
-                    <div class="chartCard__title">Transactions</div>
-                </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="utils__title utils__title--flat mb-3">
+                <span class="text-uppercase font-size-16">Total Statistics</span>
             </div>
-            <div class="col-xl-4">
-                <div class="card chartCard">
-                    <div class="chartCard__chart">
-                        <div class="chart-area-2 chartist"></div>
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="card chartCard">
+                        <div class="chartCard__chart">
+                            <div class="chart-area-1 chartist"></div>
+                        </div>
+                        <div class="chartCard__amount" th:text="${totalInfluencers}"></div>
+                        <div class="chartCard__title">Influencers</div>
                     </div>
-                    <div class="chartCard__amount">$1240</div>
-                    <div class="chartCard__title">Income</div>
                 </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="card chartCard">
-                    <div class="chartCard__chart">
-                        <div class="chart-area-3 chartist"></div>
+                <div class="col-xl-4">
+                    <div class="card chartCard">
+                        <div class="chartCard__chart">
+                            <div class="chart-area-2 chartist"></div>
+                        </div>
+                        <div class="chartCard__amount" th:text="${totalReviews}"></div>
+                        <div class="chartCard__title">Reviews</div>
                     </div>
-                    <div class="chartCard__amount">$240.56</div>
-                    <div class="chartCard__title">Outcome</div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="card chartCard">
+                        <div class="chartCard__chart">
+                            <div class="chart-area-3 chartist"></div>
+                        </div>
+                        <div class="chartCard__amount" th:text="${totalProducts}"></div>
+                        <div class="chartCard__title">Products</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
-<!-- END: dashboard alpha -->
+    <!-- START: page scripts -->
+    <script>
+        (function ($) {
+            "use strict";
+            $(function () {
 
-<!-- START: page scripts -->
-<script>
-    (function($) {
-        "use strict";
-        $(function () {
+                ///////////////////////////////////////////////////////////
+                // tooltips
+                $('[data-toggle=tooltip]').tooltip()
 
-            ///////////////////////////////////////////////////////////
-            // tooltips
-            $('[data-toggle=tooltip]').tooltip()
+                ///////////////////////////////////////////////////////////
+                // ladda buttons
+                Ladda.bind('.ladda-button', {timeout: 2000})
 
-            ///////////////////////////////////////////////////////////
-            // ladda buttons
-            Ladda.bind('.ladda-button', {timeout: 2000})
+                ///////////////////////////////////////////////////////////
+                // Chartistcard
 
-            ///////////////////////////////////////////////////////////
-            // Chartistcard
+                new Chartist.Line(".chart-area-1", {
+                    series: [
+                        [2, 11, 8, 14, 18, 20, 26]
+                    ]
+                }, {
+                    width: "120px",
+                    height: "107px",
 
-            new Chartist.Line(".chart-area-1", {
-                series: [
-                    [2, 11, 8, 14, 18, 20, 26]
-                ]
-            }, {
-                width: "120px",
-                height: "107px",
-
-                showPoint: false,
-                showLine: true,
-                showArea: true,
-                fullWidth: true,
-                showLabel: false,
-                axisX: {
-                    showGrid: false,
+                    showPoint: false,
+                    showLine: true,
+                    showArea: true,
+                    fullWidth: true,
                     showLabel: false,
-                    offset: 0
-                },
-                axisY: {
-                    showGrid: false,
-                    showLabel: false,
-                    offset: 0
-                },
-                chartPadding: 0,
-                low: 0,
-                plugins: [
-                    Chartist.plugins.tooltip()
-                ]
-            });
+                    axisX: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    axisY: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    chartPadding: 0,
+                    low: 0,
+                    plugins: [
+                        Chartist.plugins.tooltip()
+                    ]
+                });
 
-            new Chartist.Line(".chart-area-2", {
-                series: [
-                    [20, 80, 67, 120, 132, 66, 97]
-                ]
-            }, {
-                width: "120px",
-                height: "107px",
+                new Chartist.Line(".chart-area-2", {
+                    series: [
+                        [20, 80, 67, 120, 132, 66, 97]
+                    ]
+                }, {
+                    width: "120px",
+                    height: "107px",
 
-                showPoint: false,
-                showLine: true,
-                showArea: true,
-                fullWidth: true,
-                showLabel: false,
-                axisX: {
-                    showGrid: false,
+                    showPoint: false,
+                    showLine: true,
+                    showArea: true,
+                    fullWidth: true,
                     showLabel: false,
-                    offset: 0
-                },
-                axisY: {
-                    showGrid: false,
-                    showLabel: false,
-                    offset: 0
-                },
-                chartPadding: 0,
-                low: 0,
-            });
+                    axisX: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    axisY: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    chartPadding: 0,
+                    low: 0,
+                });
 
-            new Chartist.Line(".chart-area-3", {
-                series: [
-                    [42, 40, 80, 67, 84, 20, 97]
-                ]
-            }, {
-                width: "120px",
-                height: "107px",
+                new Chartist.Line(".chart-area-3", {
+                    series: [
+                        [42, 40, 80, 67, 84, 20, 97]
+                    ]
+                }, {
+                    width: "120px",
+                    height: "107px",
 
-                showPoint: false,
-                showLine: true,
-                showArea: true,
-                fullWidth: true,
-                showLabel: false,
-                axisX: {
-                    showGrid: false,
+                    showPoint: false,
+                    showLine: true,
+                    showArea: true,
+                    fullWidth: true,
                     showLabel: false,
-                    offset: 0
-                },
-                axisY: {
-                    showGrid: false,
-                    showLabel: false,
-                    offset: 0
-                },
-                chartPadding: 0,
-                low: 0,
-            });
+                    axisX: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    axisY: {
+                        showGrid: false,
+                        showLabel: false,
+                        offset: 0
+                    },
+                    chartPadding: 0,
+                    low: 0,
+                });
 
-        })
-    })(jQuery)
-</script>
-<!-- END: page scripts -->
+            })
+        })(jQuery)
+    </script>
+    <!-- END: page scripts -->
 
 </div>
