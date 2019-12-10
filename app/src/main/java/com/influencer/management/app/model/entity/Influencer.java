@@ -39,7 +39,6 @@ public class Influencer {
      *
      */
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "personal_details_id", unique = true)
     private PersonalDetails personalDetails;
 
 
@@ -49,7 +48,6 @@ public class Influencer {
      */
 
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "instagram_profile_id")
     private InstagramProfile instagramProfile;
 
     /**
