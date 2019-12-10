@@ -1,6 +1,7 @@
 package com.influencer.management.app.model.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -37,7 +38,6 @@ public class Influencer {
      * Here is added the field for the Personal Details Object of the Influencer
      *
      */
-
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "personal_details_id", unique = true)
     private PersonalDetails personalDetails;

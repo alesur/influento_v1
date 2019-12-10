@@ -8,10 +8,7 @@ import com.influencer.management.app.model.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
@@ -42,8 +39,18 @@ public class InfluencerController {
 
     @GetMapping("/view/{id}")
     public String view(@PathVariable int id, Model model) {
+
         Influencer influencer = influencerRepository.getOne(id);
+        Country country = countryRepository.getOne(id);
+        PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
+        InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
+
+
+
         model.addAttribute("influencer", influencer);
+        model.addAttribute("country", country);
+        model.addAttribute("personalDetails", personalDetails);
+        model.addAttribute("instagramProfile", instagramProfile);
 
         return "influencer-view.html";
     }
@@ -77,11 +84,30 @@ public class InfluencerController {
     @GetMapping("/add")
     public String showFormForAdd(Model model) {
 
+
+
         Influencer influencer = new Influencer();
+        PersonalDetails personalDetails = new PersonalDetails();
+        InstagramProfile instagramProfile = new InstagramProfile();
+        List<Country> countryList = countryRepository.findAll();
 
         model.addAttribute("influencer", influencer);
+        model.addAttribute("personalDetails", personalDetails);
+        model.addAttribute("instagramProfile", instagramProfile);
+        model.addAttribute("country", countryList);
 
-        return "influencer-edit.html";
+        return "influencer-add.html";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("influencerId") int id) {
+
+        influencerRepository.deleteById(id);
+        personalDetailsReposiroty.deleteById(id);
+        instagramProfileReposiroty.deleteById(id);
+
+        return "redirect:/influencer";
+
     }
 
 

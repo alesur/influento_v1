@@ -6,7 +6,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-                        <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">
+                        <form method="POST" th:action="@{/influencer/edit/}" th:object="${influencer}">
                             <input type="hidden"  th:field="*{id}"/>
                             <input type="hidden"  th:value="${personalDetails.id}" th:name="personalDetails" id="personalDetails" />
                             <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile" id="instagramProfile"/>
@@ -103,12 +103,8 @@
 
             <!--            Action Buttons-->
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary width-150">Save</button>
-                <a th:href="@{/influencer/delete/(influencerId=${influencer.id})}"
-                   class="btn btn-default"
-                   onclick="if (!(confirm('Are you sure you want to delete this record?'))) return false">
-                    Delete
-                </a>
+                <button type="submit" class="btn btn-outline-primary mr-2 mb-2 width-150">Create</button>
+
                 </form>
             </div>
         </div>
