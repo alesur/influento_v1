@@ -18,7 +18,7 @@
             <td th:text="${influencer.notes}">Notes</td>
             <td th:text="${influencer.country.name}"></td>
             <td th:text="${influencer.lastDayContacted()}"></td>
-            <td><span class="badge badge-primary">Processing</span></td>
+            <td th:text="${influencer.status}"><span class="badge badge-primary">Processing</span></td>
             <td><a th:href="@{${#httpServletRequest.requestURI} + '/view/' + ${influencer.id}}" class="utils__link--underlined mr-2"><i class="icmn-profile"><!-- --></i>  View more</a></td>
         </tr>
         </tbody>
