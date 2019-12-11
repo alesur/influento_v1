@@ -102,6 +102,12 @@ public class InfluencerController {
         return "redirect:/influencer/view/{id}";
     }
 
+    @GetMapping("/view/{influID}/deleteDay/{dayId}")
+    public String deleteDayContacted(@PathVariable int influID,@PathVariable("dayId") int dayId) {
+        dayContactedRepository.deleteById(dayId);
+        return "redirect:/influencer/view/{influID}";
+    }
+
     @PostMapping("/edit")
     public String editpost(@Valid Influencer influencer, PersonalDetails personalDetails, InstagramProfile instagramProfile) {
 
