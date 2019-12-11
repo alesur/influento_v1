@@ -16,19 +16,19 @@
                             <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"
                                    id="instagramProfile"/>
                             <input type="text" th:value="${influencer.profileName}" th:field="*{profileName}"
-                                   class="form-control" id="l301">
+                                   class="form-control" id="l301" required>
                             <label for="l301">Instagram followers</label>
                             <input type="text" th:value="${instagramProfile.followersNumbers}"
                                    th:field="*{instagramProfile.followersNumbers}"
-                                   class="form-control" id="l301">
+                                   class="form-control" id="l301" required>
                             <label for="l301">Instagram average likes</label>
                             <input type="text" th:value="${instagramProfile.averageLikes}"
                                    th:field="*{instagramProfile.averageLikes}"
-                                   class="form-control" id="l301">
+                                   class="form-control" id="l301" required>
                             <label for="l301">Instagram average comments</label>
                             <input type="text" th:value="${instagramProfile.averageComments}"
                                    th:field="*{instagramProfile.averageComments}"
-                                   class="form-control" id="l301">
+                                   class="form-control" id="l301" required>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <label for="l30">First Name</label>
                         <input type="text" th:value="${personalDetails.firstName}"
-                               th:field="*{personalDetails.firstName}" class="form-control" id="l30">
+                               th:field="*{personalDetails.firstName}" class="form-control" id="l30" required>
 
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <div class="form-group">
                         <label for="l31">Last Name</label>
                         <input type="text" th:value="${personalDetails.lastName}"
-                               th:field="*{personalDetails.lastName}" class="form-control" id="l31">
+                               th:field="*{personalDetails.lastName}" class="form-control" id="l31" required>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label for="l30">Phone</label>
                         <input type="text" th:value="${personalDetails.phone}"
-                               th:field="*{personalDetails.phone}" class="form-control" id="l30">
+                               th:field="*{personalDetails.phone}" class="form-control" id="l30" required>
                     </div>
                 </div>
                 <!--            Email -->
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="l31">Email</label>
                         <input type="text" th:value="${personalDetails.email}"
-                               th:field="*{personalDetails.email}" class="form-control" id="l31">
+                               th:field="*{personalDetails.email}" class="form-control" id="l31" required>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,8 @@
             <!--            Country -->
             <div class="form-group">
                 <label for="l13">Country</label>
-                <select th:field="*{influencer.country}" class="form-control" id="l13">
-                    <option th:value="0">Choose a country</option>
+                <select th:field="*{influencer.country}" class="form-control" id="l13" th:required="true">
+                    <option value="" >Choose a country</option>
                     <option th:each="country: ${country}" th:value="${country.id}" th:text="${country.name}"></option>
                 </select>
             </div>
@@ -92,7 +92,7 @@
                     <div class="form-group">
                         <label for="l30">Address</label>
                         <input type="text" th:value="${personalDetails.address}" th:field="*{personalDetails.address}"
-                               class="form-control" id="l30">
+                               class="form-control" id="l30" required>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,8 @@
             <!--           Status-->
             <div class="form-group">
                 <label for="l13">Status</label>
-                <select th:field="*{influencer.status}" class="form-control" id="l13">
+                <select th:field="*{influencer.status}" class="form-control" id="l13" th:required="true">
+                    <option value="">Assign Status</option>
                     <option value="Contacted">Contacted</option>
                     <option value="Active">Active</option>
                     <option value="First Review">First Review</option>

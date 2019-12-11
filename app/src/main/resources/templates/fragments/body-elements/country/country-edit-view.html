@@ -8,7 +8,7 @@
                     <label for="l301">Title</label>
                    <form method="POST"  th:action="@{/countries/edit}" th:object="${country}">
                        <input type="hidden" th:field="*{id}" />
-                    <input type="text" th:value="${country.name}" th:field="*{name}" class="form-control" id="l301">
+                    <input type="text" th:value="${country.name}" th:field="*{name}" class="form-control" id="l301" required minlength="4">
                 </div>
             </div>
         </div>
