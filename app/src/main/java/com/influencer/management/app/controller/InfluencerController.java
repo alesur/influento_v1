@@ -30,6 +30,9 @@ public class InfluencerController {
     @Autowired
     private ReviewRepository reviewRepository;
 
+    @Autowired
+    private DayContactedRepository dayContactedRepository;
+
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
@@ -45,7 +48,7 @@ public class InfluencerController {
         PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
         Review review = new Review();
-
+        DayContacted dayContacted = new DayContacted();
 
 
         model.addAttribute("influencer", influencer);
@@ -53,6 +56,7 @@ public class InfluencerController {
         model.addAttribute("personalDetails", personalDetails);
         model.addAttribute("instagramProfile", instagramProfile);
         model.addAttribute("review", review);
+        model.addAttribute("dayContacted",dayContacted);
 
         return "influencer-view.html";
     }
@@ -80,6 +84,21 @@ public class InfluencerController {
         theReview.setId(0);
         theReview.setInfluencerf(influencer);
         reviewRepository.save(theReview);
+        return "redirect:/influencer/view/{id}";
+    }
+
+    @GetMapping("/view/{influID}/deleteReview/{reviewId}")
+    public String deleteReview(@PathVariable int influID,@PathVariable("reviewId") int reviewId) {
+        reviewRepository.deleteById(reviewId);
+        return "redirect:/influencer/view/{influID}";
+    }
+
+    @PostMapping("/view/{id}/addDayContacted")
+    public String addDayContacted(@ModelAttribute("dayContacted") DayContacted theDayContacted,@PathVariable int id) {
+        Influencer influencer = influencerRepository.getOne(id);
+        theDayContacted.setId(0);
+        theDayContacted.setInfluencer(influencer);
+        dayContactedRepository.save(theDayContacted);
         return "redirect:/influencer/view/{id}";
     }
 
