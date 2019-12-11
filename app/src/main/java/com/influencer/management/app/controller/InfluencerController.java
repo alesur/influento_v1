@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class InfluencerController {
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
         model.addAttribute("influencer", influencers);
-        return "index.html";
+        return "influencer.html";
     }
 
     @GetMapping("/view/{id}")

@@ -53,7 +53,7 @@ module.exports = (grunt) ->
         tasks: ['compile']
 
     qunit:
-      all: ['test/index.html']
+      all: ['test/influencer.html']
       options:
         timeout: 20000
 
