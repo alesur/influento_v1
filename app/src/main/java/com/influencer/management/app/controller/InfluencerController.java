@@ -56,7 +56,7 @@ public class InfluencerController {
         model.addAttribute("personalDetails", personalDetails);
         model.addAttribute("instagramProfile", instagramProfile);
         model.addAttribute("review", review);
-        model.addAttribute("dayContacted",dayContacted);
+        model.addAttribute("dayContacted", dayContacted);
 
         return "influencer-view.html";
     }
@@ -79,7 +79,7 @@ public class InfluencerController {
     }
 
     @PostMapping("/view/{id}/addReview")
-    public String addReview(@ModelAttribute("review") Review theReview,@PathVariable int id) {
+    public String addReview(@ModelAttribute("review") Review theReview, @PathVariable int id) {
         Influencer influencer = influencerRepository.getOne(id);
         theReview.setId(0);
         theReview.setInfluencerf(influencer);
@@ -88,13 +88,13 @@ public class InfluencerController {
     }
 
     @GetMapping("/view/{influID}/deleteReview/{reviewId}")
-    public String deleteReview(@PathVariable int influID,@PathVariable("reviewId") int reviewId) {
+    public String deleteReview(@PathVariable int influID, @PathVariable("reviewId") int reviewId) {
         reviewRepository.deleteById(reviewId);
         return "redirect:/influencer/view/{influID}";
     }
 
     @PostMapping("/view/{id}/addDayContacted")
-    public String addDayContacted(@ModelAttribute("dayContacted") DayContacted theDayContacted,@PathVariable int id) {
+    public String addDayContacted(@ModelAttribute("dayContacted") DayContacted theDayContacted, @PathVariable int id) {
         Influencer influencer = influencerRepository.getOne(id);
         theDayContacted.setId(0);
         theDayContacted.setInfluencer(influencer);
@@ -103,7 +103,7 @@ public class InfluencerController {
     }
 
     @GetMapping("/view/{influID}/deleteDay/{dayId}")
-    public String deleteDayContacted(@PathVariable int influID,@PathVariable("dayId") int dayId) {
+    public String deleteDayContacted(@PathVariable int influID, @PathVariable("dayId") int dayId) {
         dayContactedRepository.deleteById(dayId);
         return "redirect:/influencer/view/{influID}";
     }
@@ -111,20 +111,19 @@ public class InfluencerController {
     @PostMapping("/edit")
     public String editpost(@Valid Influencer influencer, PersonalDetails personalDetails, InstagramProfile instagramProfile) {
 
-        if(influencer.influCheckEmpty() || personalDetails.detailsIsEmpty() || instagramProfile.profileIsEmpty()){
-            return "redirect:/influencer";
-        }
+//        if (influencer.influCheckEmpty() || personalDetails.detailsIsEmpty() || instagramProfile.profileIsEmpty()) {
+//            return "redirect:/influencer";
+//        }
 
         influencerRepository.save(influencer);
         personalDetailsReposiroty.save(personalDetails);
-        instagramProfileReposiroty.save(instagramProfile);
+        //instagramProfileReposiroty.save(instagramProfile);
 
         return "redirect:/influencer";
     }
 
     @GetMapping("/add")
     public String showFormForAdd(Model model) {
-
 
 
         Influencer influencer = new Influencer();

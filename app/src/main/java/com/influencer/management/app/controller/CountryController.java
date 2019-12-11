@@ -37,7 +37,7 @@ public class CountryController {
 
     @PostMapping("/edit")
     public String edit(@Valid Country country) {
-        if(country.getName().trim().isEmpty()){
+        if (country.getName().trim().isEmpty()) {
             return "redirect:/countries/";
         }
         countryRepository.save(country);

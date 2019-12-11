@@ -24,11 +24,11 @@ public class PersonalDetails {
     private String address;
 
 
-    public boolean detailsIsEmpty(){
-        if(this.getFirstName().trim().isEmpty() || this.getLastName().trim().isEmpty() ||
-                this.getPhone().trim().isEmpty() || this.getEmail().trim().isEmpty() || this.getAddress().trim().isEmpty()){
-            return true;
-        }else return false;
-    }
+//    public boolean detailsIsEmpty(){
+//        if(this.getFirstName().trim().isEmpty() || this.getLastName().trim().isEmpty() ||
+//                this.getPhone().trim().isEmpty() || this.getEmail().trim().isEmpty() || this.getAddress().trim().isEmpty()){
+//            return true;
+//        }else return false;
+//    }
 
 }

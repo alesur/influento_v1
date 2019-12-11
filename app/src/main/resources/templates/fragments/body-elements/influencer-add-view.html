@@ -6,26 +6,26 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="l301">Instagram username</label>
-                        <form method="POST" th:action="@{/influencer/edit/}" th:object="${influencer}">
+                        <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}"/>
                             <input type="hidden" th:value="${personalDetails.id}" th:name="personalDetails"
-                                   id="personalDetails" required/>
-                            <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"
-                                   id="instagramProfile" />
+                                   id="personalDetails"/>
+<!--                            <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"-->
+<!--                                   id="instagramProfile"/>-->
                             <input type="text" th:value="${influencer.profileName}" th:field="*{profileName}"
                                    class="form-control" id="l301" required>
                             <label for="l301">Instagram followers</label>
                             <input type="text" th:value="${instagramProfile.followersNumbers}"
                                    th:field="*{instagramProfile.followersNumbers}"
-                                   class="form-control" id="l301" required>
+                                   class="form-control" id="l301">
                             <label for="l301">Instagram average likes</label>
                             <input type="text" th:value="${instagramProfile.averageLikes}"
                                    th:field="*{instagramProfile.averageLikes}"
-                                   class="form-control" id="l301" required>
+                                   class="form-control" id="l301">
                             <label for="l301">Instagram average comments</label>
                             <input type="text" th:value="${instagramProfile.averageComments}"
                                    th:field="*{instagramProfile.averageComments}"
-                                   class="form-control" id="l301" required>
+                                   class="form-control" id="l301">
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@
             <!--            Country -->
             <div class="form-group">
                 <label for="l13">Country</label>
-                <select th:field="*{influencer.country}" class="form-control" id="l13">
-                    <option th:value="0">Choose a country</option>
+                <select th:field="*{influencer.country}" class="form-control" id="l13" th:required="true">
+                    <option value="" >Choose a country</option>
                     <option th:each="country: ${country}" th:value="${country.id}" th:text="${country.name}" ></option>
                 </select>
             </div>
@@ -104,7 +104,8 @@
             <!--            Status-->
             <div class="form-group">
                 <label for="l13">Status</label>
-                <select th:field="*{influencer.status}" class="form-control" id="l13">
+                <select th:field="*{influencer.status}" class="form-control" id="l13" th:required="true">
+                    <option value="">Assign Status</option>
                     <option value="Contacted">Contacted</option>
                     <option value="Active">Active</option>
                     <option value="First Review">First Review</option>
