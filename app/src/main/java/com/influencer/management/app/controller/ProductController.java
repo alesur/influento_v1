@@ -35,8 +35,13 @@ public class ProductController {
     }
 
     @PostMapping("/edit")
-    public String edit(@Valid Product product) {
+    public String edit(@Valid Product product,Model theModel) {
 
+        if(product.getName().trim().isEmpty()){
+            String texto = "empty text, no product created";
+            theModel.addAttribute("alerta",texto);
+            return "redirect:/products/";
+        }
         productRepository.save(product);
 
         return "redirect:/products/";

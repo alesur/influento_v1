@@ -22,4 +22,9 @@ public class InstagramProfile {
     private int averageComments;
 
 
+    public boolean profileIsEmpty(){
+        if(this.profileLink.trim().isEmpty()){
+            return true;
+        }else return false;
+    }
 }

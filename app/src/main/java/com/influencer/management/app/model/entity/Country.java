@@ -3,6 +3,7 @@ package com.influencer.management.app.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "country")
@@ -13,5 +14,6 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Size(min = 3, message = "Country name must be at least 3 characters long")
     private String name;
 }

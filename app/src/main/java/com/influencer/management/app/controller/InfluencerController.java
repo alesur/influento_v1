@@ -111,6 +111,10 @@ public class InfluencerController {
     @PostMapping("/edit")
     public String editpost(@Valid Influencer influencer, PersonalDetails personalDetails, InstagramProfile instagramProfile) {
 
+        if(influencer.influCheckEmpty() || personalDetails.detailsIsEmpty() || instagramProfile.profileIsEmpty()){
+            return "redirect:/influencer";
+        }
+
         influencerRepository.save(influencer);
         personalDetailsReposiroty.save(personalDetails);
         instagramProfileReposiroty.save(instagramProfile);
@@ -146,6 +150,4 @@ public class InfluencerController {
         return "redirect:/influencer";
 
     }
-
-
 }

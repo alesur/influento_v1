@@ -129,6 +129,11 @@ public class Influencer {
         reviews.add(review);
     }
 
+    public boolean influCheckEmpty(){
+        if(this.getProfileName().trim().isEmpty()){
+            return true;
+        }else return false;
+    }
 
 
 }
