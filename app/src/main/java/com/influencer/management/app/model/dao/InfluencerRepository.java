@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InfluencerRepository extends JpaRepository<Influencer, Integer> {
 
-
+    public Influencer findByProfileName(String profileName);
 }

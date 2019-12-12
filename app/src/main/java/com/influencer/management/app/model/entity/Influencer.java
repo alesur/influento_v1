@@ -70,6 +70,8 @@ public class Influencer {
     inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> productsSent;
 
+    
+
     public String lastDayContacted(){
         /**
          * Trying to develop new logic for LastDayContacted
