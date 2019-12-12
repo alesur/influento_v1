@@ -18,7 +18,7 @@ public class DayContacted {
     private int id;
 
     @Size(min = 3, message = "Date must be at least 3 characters long")
-    private String date;
+    private String note;
 
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "influencer_id")
@@ -33,11 +33,11 @@ public class DayContacted {
     private Date updatedAt;
 
     public String getDate() {
-        return date;
+        return note;
     }
 
     public void setDate(String date) {
-        this.date = date;
+        this.note = date;
     }
 
 
