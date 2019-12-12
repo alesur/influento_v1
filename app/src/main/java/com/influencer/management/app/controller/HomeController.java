@@ -36,9 +36,8 @@ public class HomeController {
     @GetMapping("/dashboard")
     public String dashboard(Model model) {
 
-        Post[] restShow = restService.getPostsAsObject();
 
-
+        System.out.println(restService.getPostsPlainJSON());
 
         long totalInfluencers = influencerRepository.count();
         long totalReviews = reviewRepository.count();

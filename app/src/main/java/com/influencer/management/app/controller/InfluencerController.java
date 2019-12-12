@@ -35,6 +35,9 @@ public class InfluencerController {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private AssignedProductsRepository assignedProductsRepository;
+
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
@@ -50,7 +53,9 @@ public class InfluencerController {
         PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
         List<Product> productList = productRepository.findAll();
+        AssignedProducts productassign = assignedProductsRepository.getOne(id);
         Review review = new Review();
+        // Product productassign = new Product();
         DayContacted dayContacted = new DayContacted();
 
 
@@ -61,6 +66,7 @@ public class InfluencerController {
         model.addAttribute("review", review);
         model.addAttribute("dayContacted", dayContacted);
         model.addAttribute("product", productList);
+        model.addAttribute("productassign", productassign);
 
         return "influencer-view.html";
     }
@@ -91,6 +97,16 @@ public class InfluencerController {
         return "redirect:/influencer/view/{id}";
     }
 
+    @PostMapping("/view/{id}/assignProduct")
+    public String assignProduct(@ModelAttribute("assignedProducts") AssignedProducts assignedProducts, @PathVariable int id) {
+        Influencer influencer = influencerRepository.getOne(id);
+        assignedProducts.setId(0);
+        // assignedProducts.setProduct(product);
+        assignedProducts.setInfluencer(influencer);
+        assignedProductsRepository.save(assignedProducts);
+        return "redirect:/influencer/view/{id}";
+    }
+
     @GetMapping("/view/{influID}/deleteReview/{reviewId}")
     public String deleteReview(@PathVariable int influID, @PathVariable("reviewId") int reviewId) {
         reviewRepository.deleteById(reviewId);
@@ -109,6 +125,12 @@ public class InfluencerController {
     @GetMapping("/view/{influID}/deleteDay/{dayId}")
     public String deleteDayContacted(@PathVariable int influID, @PathVariable("dayId") int dayId) {
         dayContactedRepository.deleteById(dayId);
+        return "redirect:/influencer/view/{influID}";
+    }
+
+    @GetMapping("/view/{influID}/deleteAssignedProduct/{productId}")
+    public String deleteAssignedProduct(@PathVariable int influID, @PathVariable("productId") int productId) {
+        assignedProductsRepository.deleteById(productId);
         return "redirect:/influencer/view/{influID}";
     }
 

@@ -22,7 +22,7 @@ public class RestService {
     }
 
     public String getPostsPlainJSON() {
-        String url = "https://jsonplaceholder.typicode.com/posts";
+        String url = "https://www.instagram.com/p/B1basSko4v5/?__a=1";
         return this.restTemplate.getForObject(url, String.class);
     }
 

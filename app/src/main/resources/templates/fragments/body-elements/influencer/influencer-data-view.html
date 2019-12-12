@@ -100,23 +100,28 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Shampoo</td>
-                        <td><a th:href="@{#}"
-                               class="utils__link--underlined mr-2"
-                               onclick="if (!(confirm('Are you sure you want to delete this Assignment?'))) return false">
-                            <i class="icmn-bin2"></i> Delete</a>
+                    <tr th:each="assign, stat: ${influencer.assignedProducts}">
+                        <td th:text="${stat.count}"></td>
+                        <td th:text="${assign.product.name}"></td>
+                        <td>
+                            <a th:href="@{/influencer/view/{influID}/deleteAssignedProduct/{productId}(influID=${influencer.id},productId=${assign.id})}"
+                                    class="utils__link--underlined mr-2"
+                                    onclick="if (!(confirm('Are you sure you want to delete this review?'))) return false">
+                                <i class="icmn-bin2"></i> Delete</a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="form-group has-focused">
-                    <form >
-                            <select class="form-control" id="l13">
-                                <option value="" >Select Product</option>
-                                <option th:each="product: ${product}" th:value="${product.id}" th:text="${product.name}"></option>
-                            </select>
+                    <form th:action="@{${#httpServletRequest.requestURI} + '/assignProduct'}"
+                          th:object="${assignedProducts}"
+                          method="post">
+                        <select th:name="product"
+                                class="form-control" id="l13">
+                            <option value="">Select Product</option>
+                            <option th:each="product: ${product}" th:value="${product.id}"
+                                    th:text="${product.name}"></option>
+                        </select>
                         <button class="btn btn-primary btn-sm" type="submit">Assign</button>
                     </form>
                 </div>
@@ -147,16 +152,18 @@
                         <td th:text="${dateStat.count}"></td>
                         <td th:text="${dateContacted.note}">Day Contacted</td>
                         <td th:text="${#dates.format(dateContacted.createdAt, 'yyyy-MM-dd HH:mm')}">Time</td>
-                        <td><a th:href="@{/influencer/view/{influID}/deleteDay/{dayId}(influID=${influencer.id},dayId=${dateContacted.id})}"
+                        <td>
+                            <a th:href="@{/influencer/view/{influID}/deleteDay/{dayId}(influID=${influencer.id},dayId=${dateContacted.id})}"
                                class="utils__link--underlined mr-2"
                                onclick="if (!(confirm('Are you sure you want to delete this Date?'))) return false">
-                            <i class="icmn-bin2"></i> Delete</a>
+                                <i class="icmn-bin2"></i> Delete</a>
                         </td>
 
                     </tbody>
                 </table>
                 <div class="form-group has-focused">
-                    <form th:action="@{${#httpServletRequest.requestURI} + '/addDayContacted'}" th:object="${dayContacted}"
+                    <form th:action="@{${#httpServletRequest.requestURI} + '/addDayContacted'}"
+                          th:object="${dayContacted}"
                           method="post">
                         <input type="text" th:field="*{note}" class="form-control"
                                placeholder="Enter a note..." id="l8">
@@ -182,10 +189,11 @@
                         <td th:text="${stat.count}"></td>
                         <td><a th:href="@{${rvw.link}}" th:target="_blank" class="utils__link--underlined"
                                th:text="${rvw.link}">Link</a></td>
-                        <td><a th:href="@{/influencer/view/{influID}/deleteReview/{reviewId}(influID=${influencer.id},reviewId=${rvw.id})}"
+                        <td>
+                            <a th:href="@{/influencer/view/{influID}/deleteReview/{reviewId}(influID=${influencer.id},reviewId=${rvw.id})}"
                                class="utils__link--underlined mr-2"
                                onclick="if (!(confirm('Are you sure you want to delete this review?'))) return false">
-                            <i class="icmn-bin2"></i> Delete</a>
+                                <i class="icmn-bin2"></i> Delete</a>
                         </td>
                     </tr>
                     </tbody>
@@ -195,7 +203,7 @@
                           method="post">
                         <input type="text" th:field="*{link}" class="form-control"
                                placeholder="Enter link of new review..." id="l8">
-                        
+
                         <button class="btn btn-primary btn-sm" type="submit">Add Review</button>
                     </form>
                 </div>
