@@ -54,8 +54,8 @@ public class InfluencerController {
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
         List<Product> productList = productRepository.findAll();
         AssignedProducts productassign = assignedProductsRepository.getOne(id);
+
         Review review = new Review();
-        // Product productassign = new Product();
         DayContacted dayContacted = new DayContacted();
 
 
@@ -171,6 +171,7 @@ public class InfluencerController {
         influencerRepository.deleteById(id);
         personalDetailsReposiroty.deleteById(id);
         instagramProfileReposiroty.deleteById(id);
+        reviewRepository.deleteAll();
 
         return "redirect:/influencer";
 

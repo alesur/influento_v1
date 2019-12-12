@@ -117,7 +117,7 @@
                           th:object="${assignedProducts}"
                           method="post">
                         <select th:name="product"
-                                class="form-control" id="l13">
+                                class="form-control" id="l13" th:required="true">
                             <option value="">Select Product</option>
                             <option th:each="product: ${product}" th:value="${product.id}"
                                     th:text="${product.name}"></option>
@@ -166,7 +166,7 @@
                           th:object="${dayContacted}"
                           method="post">
                         <input type="text" th:field="*{note}" class="form-control"
-                               placeholder="Enter a note..." id="l8">
+                               placeholder="Enter a note..." id="l8" required minlength="4">
                         <button class="btn btn-primary btn-sm" type="submit">Add Record</button>
                     </form>
                 </div>
@@ -202,7 +202,7 @@
                     <form th:action="@{${#httpServletRequest.requestURI} + '/addReview'}" th:object="${review}"
                           method="post">
                         <input type="text" th:field="*{link}" class="form-control"
-                               placeholder="Enter link of new review..." id="l8">
+                               placeholder="Enter link of new review..." id="l8" required minlength="4">
 
                         <button class="btn btn-primary btn-sm" type="submit">Add Review</button>
                     </form>
