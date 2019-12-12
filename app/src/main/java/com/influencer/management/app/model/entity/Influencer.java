@@ -29,7 +29,8 @@ public class Influencer {
     private Country country;
 
 
-    @OneToMany(mappedBy = "influencer")
+    @OneToMany(mappedBy = "influencer", orphanRemoval = true)
+
     private List<AssignedProducts> assignedProducts;
 
     /**
@@ -49,13 +50,13 @@ public class Influencer {
     /**
      * Here is added the List of the days when Influencer has been contacted
      */
-    @OneToMany(mappedBy = "influencer")
+    @OneToMany(mappedBy = "influencer", orphanRemoval = true)
     private List<DayContacted> daysContacted;
 
     /**
      * Here is added the List of the reviews the Influencer has done
      */
-    @OneToMany(mappedBy = "influencerf")
+    @OneToMany(mappedBy = "influencerf", orphanRemoval = true)
     private List<Review> reviews;
 
     /**
