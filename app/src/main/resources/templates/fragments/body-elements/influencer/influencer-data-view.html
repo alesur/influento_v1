@@ -88,6 +88,40 @@
             </div>
         </div>
 
+        <div class="col-lg-4">
+            <h5 class="text-black"><strong>Assigned Products</strong></h5>
+            <div class="mb-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product for review</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Shampoo</td>
+                        <td><a th:href="@{#}"
+                               class="utils__link--underlined mr-2"
+                               onclick="if (!(confirm('Are you sure you want to delete this Assignment?'))) return false">
+                            <i class="icmn-bin2"></i> Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="form-group has-focused">
+                    <form >
+                            <select class="form-control" id="l13">
+                                <option value="" >Select Product</option>
+                                <option th:each="product: ${product}" th:value="${product.id}" th:text="${product.name}"></option>
+                            </select>
+                        <button class="btn btn-primary btn-sm" type="submit">Assign</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <br/>

@@ -32,6 +32,9 @@ public class InfluencerController {
     @Autowired
     private DayContactedRepository dayContactedRepository;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
@@ -46,6 +49,7 @@ public class InfluencerController {
         Country country = countryRepository.getOne(id);
         PersonalDetails personalDetails = personalDetailsReposiroty.getOne(id);
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
+        List<Product> productList = productRepository.findAll();
         Review review = new Review();
         DayContacted dayContacted = new DayContacted();
 
@@ -56,6 +60,7 @@ public class InfluencerController {
         model.addAttribute("instagramProfile", instagramProfile);
         model.addAttribute("review", review);
         model.addAttribute("dayContacted", dayContacted);
+        model.addAttribute("product", productList);
 
         return "influencer-view.html";
     }
