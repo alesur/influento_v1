@@ -106,6 +106,10 @@ public class Influencer {
         return resultDate;
     }
 
+    public String lastDayContactedNote(){
+        return lastDayContactedNote();
+    }
+
     /**
      * HERE are 3 "convenience" methods, to be able to add dayContacted, productSent, and Review  to the three lists
      */
