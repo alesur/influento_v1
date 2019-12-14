@@ -21,9 +21,9 @@
 
             <td th:text="${influencer.status}"><span class="badge badge-primary">Processing</span></td>
 
-            <td th:each="dateview, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${#dates.format(dateview.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+            <td><p th:each="dateview, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${#dates.format(dateview.createdAt, 'yyyy-MM-dd HH:mm')}"></p></td>
 
-            <td th:each="vaiva, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${vaiva.note}"></td>
+            <td><p th:each="vaiva, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${vaiva.note}" ></p></td>
 
             <td><a th:href="@{${#httpServletRequest.requestURI} + '/view/' + ${influencer.id}}" class="utils__link--underlined mr-2"><i class="icmn-profile"><!-- --></i>  View more</a></td>
         </tr>
