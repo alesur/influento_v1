@@ -44,10 +44,10 @@ public class ProductController {
     public String edit(@Valid Product product, Model theModel) {
 
         if (product.getName().trim().isEmpty()) {
-            return "redirect:/products/";
+            return "redirect:/products";
         }
         productRepository.save(product);
-        return "redirect:/products/";
+        return "redirect:/products";
     }
 
     /**

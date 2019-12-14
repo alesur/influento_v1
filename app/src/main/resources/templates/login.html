@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-replace="/fragments/headerElements.html"></head>
+
+<body class="config--vertical config--borderLess menu-left--colorful menu-left--shadow">
+<div class="utils__content">
+    <!-- START: login Page -->
+    <div class="ogin login--fullscreen" style="background-image: url(../../components/pages/common/img/login/2.jpg)">
+        <div class="login__header">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="login__header__logo">
+                        <a href="javascript: history.back();">
+                            <img src="../../components/dummy-assets/common/img/logo-inverse.png" alt="Clean UI Admin Template" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login__block">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="login__block__inner">
+                        <div class="login__block__form">
+                            <h4 class="text-uppercase">
+                                <strong>Please log in</strong>
+                            </h4>
+                            <br />
+                            <form id="form-validation" name="form-validation" th:action="@{/authenticateTheUser}" method="POST">
+                                <div class="form-group">
+                                    <label class="form-label">Username</label>
+                                    <input id="validation-email"
+                                           class="form-control"
+                                           placeholder="Email or Username"
+                                           name="username"
+                                           type="text"
+                                          >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input id="validation-password"
+                                           class="form-control password"
+                                           name="password"
+                                           type="password" data-validation="[L>=6]"
+                                           data-validation-message="$ must be at least 6 characters"
+                                           placeholder="Password">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary mr-3">Sign In</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- START: page scripts -->
+    <script>
+        (function($) {
+            "use strict";
+            $(function () {
+
+                // Form Validation
+                $('#form-validation').validate({
+                    submit: {
+                        settings: {
+                            inputContainer: '.form-group',
+                            errorListClass: 'form-control-error',
+                            errorClass: 'has-danger'
+                        }
+                    }
+                });
+
+                // Show/Hide Password
+                $('.password').password({
+                    eyeClass: '',
+                    eyeOpenClass: 'icmn-eye',
+                    eyeCloseClass: 'icmn-eye-blocked'
+                });
+
+            });
+        })(jQuery)
+    </script>
+</div>
+</div>
+</body>
+</html>
