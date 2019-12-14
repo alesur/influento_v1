@@ -28,6 +28,9 @@ public class PersonalDetails {
 
     private String address;
 
+    @OneToOne(mappedBy = "personalDetails",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    private Influencer influencer;
+
 
 //    public boolean detailsIsEmpty(){
 //        if(this.getFirstName().trim().isEmpty() || this.getLastName().trim().isEmpty() ||

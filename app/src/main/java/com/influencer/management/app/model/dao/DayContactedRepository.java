@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface DayContactedRepository extends JpaRepository<DayContacted, Integer> {
 
-
 }

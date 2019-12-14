@@ -139,10 +139,12 @@ public class InfluencerController {
 //        if (influencer.influCheckEmpty() || personalDetails.detailsIsEmpty() || instagramProfile.profileIsEmpty()) {
 //            return "redirect:/influencer";
 //        }
+        influencer.setInstagramProfile(instagramProfile);
+        influencer.setPersonalDetails(personalDetails);
 
         influencerRepository.save(influencer);
-        personalDetailsReposiroty.save(personalDetails);
-        //instagramProfileReposiroty.save(instagramProfile);
+//        personalDetailsReposiroty.save(personalDetails);
+//        instagramProfileReposiroty.save(instagramProfile);
 
         return "redirect:/influencer";
     }
@@ -168,9 +170,9 @@ public class InfluencerController {
     public String delete(@RequestParam("influencerId") int id) {
 
         influencerRepository.deleteById(id);
-        personalDetailsReposiroty.deleteById(id);
-        instagramProfileReposiroty.deleteById(id);
-        reviewRepository.deleteAll();
+//        personalDetailsReposiroty.deleteById(id);
+//        instagramProfileReposiroty.deleteById(id);
+//        reviewRepository.deleteAll();
 
         return "redirect:/influencer";
 

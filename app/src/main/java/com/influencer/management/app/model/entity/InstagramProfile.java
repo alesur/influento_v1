@@ -26,6 +26,9 @@ public class InstagramProfile {
 
     private int averageComments;
 
+    @OneToOne(mappedBy = "instagramProfile",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    private Influencer influencer;
+
 
 //    public boolean profileIsEmpty(){
 //        if(this.profileLink.trim().isEmpty()){

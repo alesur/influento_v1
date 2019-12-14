@@ -34,19 +34,19 @@ public class Influencer {
 
     private String status;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
 
-    @OneToMany(mappedBy = "influencer", orphanRemoval = true)
-
+    //@OneToMany(mappedBy = "influencer", orphanRemoval = true)
+    @OneToMany(mappedBy = "influencer",cascade = {CascadeType.ALL})
     private List<AssignedProducts> assignedProducts;
 
     /**
      * Here is added the field for the Personal Details Object of the Influencer
      */
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @OneToOne(cascade = {CascadeType.ALL})
     private PersonalDetails personalDetails;
 
 
@@ -54,24 +54,31 @@ public class Influencer {
      * Here is added the field for the Instagram Profile Object of the Influencer
      */
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @OneToOne(cascade = {CascadeType.ALL})
     private InstagramProfile instagramProfile;
 
     /**
      * Here is added the List of the days when Influencer has been contacted
      */
-    @OneToMany(mappedBy = "influencer", orphanRemoval = true)
+    //@OneToMany(mappedBy = "influencer", orphanRemoval = true)
+    @OneToMany(mappedBy = "influencer",cascade = {CascadeType.ALL})
     private List<DayContacted> daysContacted;
 
     /**
      * Here is added the List of the reviews the Influencer has done
      */
-    @OneToMany(mappedBy = "influencerf", orphanRemoval = true)
+    //@OneToMany(mappedBy = "influencerf", orphanRemoval = true)
+    @OneToMany(mappedBy = "influencerf",cascade = {CascadeType.ALL})
     private List<Review> reviews;
 
     /**
      * Here is added the List of the products sent to the Influencer
      */
+    @ManyToMany
+    @JoinTable(name = "products_influencer",
+            joinColumns = @JoinColumn(name = "influencer_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> productsSent;
 
     public String lastDayContacted() {
         /**
@@ -118,11 +125,16 @@ public class Influencer {
         reviews.add(review);
     }
 
+    public void addProduct(Product productSent) {
+        if (productsSent == null) {
+            productsSent = new ArrayList<>();
+        }
+        productsSent.add(productSent);
+    }
+
     public boolean influCheckEmpty() {
         if (this.getProfileName().trim().isEmpty()) {
             return true;
         } else return false;
     }
-
-
 }
