@@ -41,7 +41,9 @@ public class InfluencerController {
     @GetMapping()
     public String influencerList(Model model) {
         List<Influencer> influencers = influencerRepository.findAll();
+        List<DayContacted> dayContacted = dayContactedRepository.findAll();
         model.addAttribute("influencer", influencers);
+        model.addAttribute("dayContacted", dayContacted);
         return "influencer.html";
     }
 
@@ -54,6 +56,7 @@ public class InfluencerController {
         InstagramProfile instagramProfile = instagramProfileReposiroty.getOne(id);
         List<Product> productList = productRepository.findAll();
         AssignedProducts productassign = assignedProductsRepository.getOne(id);
+
 
         Review review = new Review();
         DayContacted dayContacted = new DayContacted();

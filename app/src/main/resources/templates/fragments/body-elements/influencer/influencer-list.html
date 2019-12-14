@@ -3,10 +3,10 @@
         <thead class="thead-default">
         <tr>
             <th>Name</th>
-            <th>Notes</th>
             <th>Country</th>
-            <th>Last Contacted</th>
             <th>Status</th>
+            <th>Last Contacted</th>
+            <th>Last Note</th>
             <th>Action</th>
 <!---->
          
@@ -14,21 +14,27 @@
         </thead>
         <tbody>
         <tr th:each="influencer : ${influencer}">
+
             <td><a th:href="@{'https://www.instagram.com/' + ${influencer.profileName}}"  th:target="_blank" class="utils__link--underlined" th:text="${influencer.profileName}">Name</a></td>
-            <td th:text="${influencer.notes}">Notes</td>
+
             <td th:text="${influencer.country.name}"></td>
-            <td th:text="${influencer.lastDayContacted()}"></td>
+
             <td th:text="${influencer.status}"><span class="badge badge-primary">Processing</span></td>
+
+            <td th:each="dateview, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${#dates.format(dateview.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+
+            <td th:each="vaiva, iterStat : ${influencer.daysContacted}" th:if="${iterStat.index >= iterStat.size-1}" th:text="${vaiva.note}"></td>
+
             <td><a th:href="@{${#httpServletRequest.requestURI} + '/view/' + ${influencer.id}}" class="utils__link--underlined mr-2"><i class="icmn-profile"><!-- --></i>  View more</a></td>
         </tr>
         </tbody>
         <tfoot>
         <tr>
             <th>Name</th>
-            <th>Notes</th>
             <th>Country</th>
-            <th>Last Contacted</th>
             <th>Status</th>
+            <th>Last Contacted</th>
+            <th>Last Note</th>
             <th>Action</th>
 
         </tr>
