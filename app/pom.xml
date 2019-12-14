@@ -61,7 +61,14 @@
 		<scope>test</scope>
 	</dependency>
 
-<!--		AssertJ for testing purposes	-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
+
+		<!--		AssertJ for testing purposes	-->
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
@@ -87,7 +94,7 @@
 	</dependency>
 
 
-	<!--		 Spring Security
+<!--			 Spring Security-->
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-web</artifactId>
@@ -98,11 +105,11 @@
 		<artifactId>spring-security-config</artifactId>
 		<version>5.2.1.RELEASE</version>
 	</dependency>
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-taglibs</artifactId>
-		<version>5.2.1.RELEASE</version>
-	</dependency>-->
+<!--	<dependency>-->
+<!--		<groupId>org.springframework.security</groupId>-->
+<!--		<artifactId>spring-security-taglibs</artifactId>-->
+<!--		<version>5.2.1.RELEASE</version>-->
+<!--	</dependency>-->
 	</dependencies>
 
 	<build>

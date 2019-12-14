@@ -22,29 +22,28 @@ public class RestService {
     }
 
     public String getPostsPlainJSON() {
-        String url = "https://www.instagram.com/p/B1basSko4v5/?__a=1";
+        String url = "https://www.instagram.com/p/B5_B_-tHuzD/?__a=1";
         return this.restTemplate.getForObject(url, String.class);
     }
 
-    public Post[] getPostsAsObject() {
-        String url = "https://jsonplaceholder.typicode.com/posts";
-        return this.restTemplate.getForObject(url, Post[].class);
+    public Owner[] getPostsAsObject() {
+        String url = "https://www.instagram.com/p/B5_B_-tHuzD/?__a=1";
+        return this.restTemplate.getForObject(url, Owner[].class);
     }
 
-    public Post getPostWithUrlParameters() {
+    public Owner getPostWithUrlParameters() {
         String url = "https://jsonplaceholder.typicode.com/posts/{id}";
-        return this.restTemplate.getForObject(url, Post.class, 1);
+        return this.restTemplate.getForObject(url, Owner.class, 1);
     }
 
-    public Post getPostWithResponseHandling() {
-        String url = "https://jsonplaceholder.typicode.com/posts/{id}";
-        ResponseEntity<Post> response = this.restTemplate.getForEntity(url, Post.class, 1);
+    public Owner getPostWithResponseHandling() {
+        String url = "https://www.instagram.com/p/B5_B_-tHuzD/?__a=1";
+        ResponseEntity<Owner> response = this.restTemplate.getForEntity(url, Owner.class, 1);
         if (response.getStatusCode() == HttpStatus.OK) {
             return response.getBody();
         } else {
             return null;
         }
     }
-
 
 }
