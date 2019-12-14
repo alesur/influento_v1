@@ -3,27 +3,27 @@ package com.influencer.management.app;
 
 import com.influencer.management.app.model.dao.InfluencerRepository;
 import com.influencer.management.app.model.entity.Influencer;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.EntityManager;
+import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
+
+//not working
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-class InfluencerRepositoryIntegrationTest{
+class InfluencerRepositoryFindByProfileNameIntegrationTest {
 
     /**
      * not replacing Datasource with embebbed datasource issue:
@@ -32,11 +32,19 @@ class InfluencerRepositoryIntegrationTest{
     @Autowired
     private InfluencerRepository influencerRepository;
 
+    @Autowired
+    TestEntityManager testEntityManager;
+
     @Test
-    public void whenFindAll_thenReturnPopulatedList(){
-        List<Influencer> influencers = influencerRepository.findAll();
-        assertThat(influencers.size())
-                .isGreaterThan(0);
+    public void whenFindByProfileName_thenReturnInfluencer(){
+        Influencer influencer = new Influencer();
+        influencer.setProfileName("testProfileName");
+        testEntityManager.persist(influencer);
+        testEntityManager.flush();
+
+        Influencer found = influencerRepository.findByProfileName(influencer.getProfileName());
+        assertThat(found.getProfileName())
+                .isEqualTo(influencer.getProfileName());
     }
 }
 
