@@ -36,7 +36,7 @@ public class HomeController {
     @GetMapping("/error")
     public String error() {
 
-        return "redirect:/influencer";
+        return "redirect:/";
     }
 
     @GetMapping("/dashboard")
