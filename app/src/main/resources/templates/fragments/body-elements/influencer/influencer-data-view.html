@@ -187,7 +187,7 @@
                     <tbody>
                     <tr th:each="rvw, stat: ${influencer.reviews}">
                         <td th:text="${stat.count}"></td>
-                        <td><a th:href="@{${rvw.link}}" th:target="_blank" class="utils__link--underlined"
+                        <td><a th:href="@{'https://'+${rvw.link}}" th:target="_blank" class="utils__link--underlined"
                                th:text="${rvw.link}">Link</a></td>
                         <td>
                             <a th:href="@{/influencer/view/{influID}/deleteReview/{reviewId}(influID=${influencer.id},reviewId=${rvw.id})}"
