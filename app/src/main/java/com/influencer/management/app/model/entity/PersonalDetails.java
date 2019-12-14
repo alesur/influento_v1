@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * This object represents the personal information of the Influencer
+ * Fields:
+ *      id, firstName, lastName, phone, email, address
+ */
 @Entity
 @Table(name = "personalDetails")
 @Data

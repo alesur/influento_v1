@@ -6,7 +6,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.util.Date;
 
-
+/**
+ * This object is used to assign Products to Influencers
+ * Fields:
+ *  id, product, influencer, createdAt
+ */
 @Entity
 @Table(name = "assignedProducts")
 @Data

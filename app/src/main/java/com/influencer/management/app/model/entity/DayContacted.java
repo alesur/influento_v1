@@ -8,6 +8,11 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+/**
+ * This object represents each day when Influencer was contacted
+ * Fields:
+ *      id, note, influencer, createdAt, updatedAt
+ */
 @Entity
 @Table(name = "dayscontacted")
 @Data

@@ -26,6 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class InfluencerRepositoryIntegrationTest{
 
     /**
+     * Testing InfluencerRepository
      * not replacing Datasource with embebbed datasource issue:
      * https://stackoverflow.com/questions/41315386/spring-boot-1-4-datajpatest-error-creating-bean-with-name-datasource/41316559
      */

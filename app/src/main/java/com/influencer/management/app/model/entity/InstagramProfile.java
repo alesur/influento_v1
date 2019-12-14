@@ -4,6 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * This object represents the Instagram profile of the influencer, storing its main properties
+ * Fields:
+ *      id, profilelink, followerNumbers, averageLikes, averageComments
+ */
 @Entity
 @Table(name = "instagramProfile")
 @Data

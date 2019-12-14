@@ -16,6 +16,11 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 
+/**
+ * This object represents the products
+ * Fields:
+ *      id, name, link
+ */
 @Entity
 @Table(name = "products")
 @Data

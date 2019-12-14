@@ -10,6 +10,16 @@ import java.util.Date;
 import java.util.List;
 
 
+/**
+ * This class represents the Influencer, base entity of the app
+ * Fields:
+ *      id, profileName, notes, status, assignedProducts, personalDetails, InstagramProfiel, daysContacted, reviews,productsSent
+ * Methods:
+ *      lastDayContacted(): returns a String, with the value
+ *      addDate(): checks if List<DayContacted> exists and then adds new DayContacted
+ *      addReview(): checks if List<Review> exists and then adds new Review
+ *      influCheckEmpty(): for form-validation purposes, checks if profileName is a String of blank spaces
+ */
 @Entity
 @Table(name = "influencer")
 @Data
@@ -62,12 +72,6 @@ public class Influencer {
     /**
      * Here is added the List of the products sent to the Influencer
      */
-    @ManyToMany
-    @JoinTable(name = "products_influencer",
-            joinColumns = @JoinColumn(name = "influencer_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private List<Product> productsSent;
-
 
     public String lastDayContacted() {
         /**
@@ -78,20 +82,14 @@ public class Influencer {
         String strDate = null;
         String resultDate = null;
 
-        if (daysContacted == null) {
+        if (daysContacted.size()<1) {
             max = new Date();
             strDate = dateFormat.format(max);
             resultDate = strDate.substring(0, 16);
-            return resultDate;
+            return "add first contact";
         }
 
         for (DayContacted d : daysContacted) {
-            if (d.getCreatedAt() == null) {
-                max = new Date();
-                strDate = dateFormat.format(max);
-                resultDate = strDate.substring(0, 16);
-                return resultDate;
-            }
             if (d.getCreatedAt().compareTo(max) > 0) {
                 max = d.getCreatedAt();
             }
@@ -111,13 +109,6 @@ public class Influencer {
         }
 
         daysContacted.add(dayContacted);
-    }
-
-    public void addProduct(Product productSent) {
-        if (productsSent == null) {
-            productsSent = new ArrayList<>();
-        }
-        productsSent.add(productSent);
     }
 
     public void addReview(Review review) {

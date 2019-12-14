@@ -24,6 +24,9 @@ public class ProductController {
         return "products.html";
     }
 
+    /**
+     * mapping to edit products
+     */
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable int id, Model model) {
 
@@ -34,19 +37,22 @@ public class ProductController {
         return "product-edit.html";
     }
 
+    /**
+     * mapping to edit existing product records or save new products
+     */
     @PostMapping("/edit")
     public String edit(@Valid Product product, Model theModel) {
 
         if (product.getName().trim().isEmpty()) {
-            String texto = "empty text, no product created";
-            theModel.addAttribute("alerta", texto);
             return "redirect:/products/";
         }
         productRepository.save(product);
-
         return "redirect:/products/";
     }
 
+    /**
+     * mapping to delete products
+     */
     @GetMapping("/delete")
     public String delete(@RequestParam("productId") int id) {
 
@@ -55,6 +61,10 @@ public class ProductController {
         return "redirect:/products/";
 
     }
+
+    /**
+     * mapping to add products
+     */
 
     @GetMapping("/add")
     public String showFormForAdd(Model model) {

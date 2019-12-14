@@ -5,6 +5,11 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+/**
+ * This object represents the countries
+ * Fields:
+ *      id, name
+ */
 @Entity
 @Table(name = "country")
 @Data

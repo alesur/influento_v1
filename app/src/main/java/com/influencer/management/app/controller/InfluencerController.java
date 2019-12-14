@@ -101,7 +101,6 @@ public class InfluencerController {
     public String assignProduct(@ModelAttribute("assignedProducts") AssignedProducts assignedProducts, @PathVariable int id) {
         Influencer influencer = influencerRepository.getOne(id);
         assignedProducts.setId(0);
-        // assignedProducts.setProduct(product);
         assignedProducts.setInfluencer(influencer);
         assignedProductsRepository.save(assignedProducts);
         return "redirect:/influencer/view/{id}";

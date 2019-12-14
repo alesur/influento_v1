@@ -5,6 +5,11 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+/**
+ * This object represents the reviews created by the Influencer, stores its link to the actual Instagram review
+ * Fields:
+ *      id, link, influencerf
+ */
 @Entity
 @Table(name = "reviews")
 @Data
