@@ -1,7 +1,4 @@
 <div class="card-body">
-
-
-
     <div class="row">
         <div class="col-lg-8">
             <h4 class="text-black mb-3"><strong>Social</strong></h4>
@@ -11,8 +8,8 @@
                         <label for="l301">Instagram username</label>
                         <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}"/>
-                            <input type="hidden" th:value="${personalDetails.id}" th:name="personalDetails"
-                                   id="personalDetails"/>
+<!--                            <input type="hidden" th:value="${personalDetails.id}" th:name="personalDetails"-->
+<!--                                   id="personalDetails"/>-->
                             <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"
                                    id="instagramProfile"/>
                             <input type="text" th:value="${influencer.profileName}" th:field="*{profileName}"
