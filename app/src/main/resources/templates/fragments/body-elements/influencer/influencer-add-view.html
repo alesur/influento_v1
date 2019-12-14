@@ -8,23 +8,25 @@
                         <label for="l301">Instagram username</label>
                         <form method="POST" th:action="@{/influencer/edit}" th:object="${influencer}">
                             <input type="hidden" th:field="*{id}"/>
-                            <input type="hidden" th:value="${personalDetails.id}" th:name="personalDetails"
-                                   id="personalDetails"/>
-                            <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"
-                                                                                             id="instagramProfile"/>
+<!--                            <input type="hidden" th:value="${personalDetails.id}" th:name="personalDetails"-->
+<!--                                   id="personalDetails"/>-->
+<!--                            <input type="hidden" th:value="${instagramProfile.id}" th:name="instagramProfile"-->
+<!--                                   id="instagramProfile"/>-->
+
                             <input type="text" th:value="${influencer.profileName}" th:field="*{profileName}"
                                    class="form-control" id="l301" required>
+
                             <label for="l301">Instagram followers</label>
-                            <input type="text" th:value="${instagramProfile.followersNumbers}"
-                                   th:field="*{instagramProfile.followersNumbers}"
+                            <input type="text" th:name="followersNumbers"
+                                   th:value="${instagramProfile.followersNumbers}"
                                    class="form-control" id="l301">
                             <label for="l301">Instagram average likes</label>
-                            <input type="text" th:value="${instagramProfile.averageLikes}"
-                                   th:field="*{instagramProfile.averageLikes}"
+                            <input type="text" th:name="averageLikes"
+                                   th:value="${instagramProfile.averageLikes}"
                                    class="form-control" id="l301">
                             <label for="l301">Instagram average comments</label>
-                            <input type="text" th:value="${instagramProfile.averageComments}"
-                                   th:field="*{instagramProfile.averageComments}"
+                            <input type="text" th:name="averageComments"
+                                   th:value="${instagramProfile.averageComments}"
                                    class="form-control" id="l301">
                     </div>
                 </div>
