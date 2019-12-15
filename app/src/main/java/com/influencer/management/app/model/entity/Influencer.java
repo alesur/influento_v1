@@ -38,8 +38,6 @@ public class Influencer {
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
-
-    //@OneToMany(mappedBy = "influencer", orphanRemoval = true)
     @OneToMany(mappedBy = "influencer",cascade = {CascadeType.ALL})
     private List<AssignedProducts> assignedProducts;
 
@@ -60,14 +58,12 @@ public class Influencer {
     /**
      * Here is added the List of the days when Influencer has been contacted
      */
-    //@OneToMany(mappedBy = "influencer", orphanRemoval = true)
     @OneToMany(mappedBy = "influencer",cascade = {CascadeType.ALL})
     private List<DayContacted> daysContacted;
 
     /**
      * Here is added the List of the reviews the Influencer has done
      */
-    //@OneToMany(mappedBy = "influencerf", orphanRemoval = true)
     @OneToMany(mappedBy = "influencerf",cascade = {CascadeType.ALL})
     private List<Review> reviews;
 

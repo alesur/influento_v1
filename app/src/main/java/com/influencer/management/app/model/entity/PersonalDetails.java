@@ -31,12 +31,4 @@ public class PersonalDetails {
     @OneToOne(mappedBy = "personalDetails",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private Influencer influencer;
 
-
-//    public boolean detailsIsEmpty(){
-//        if(this.getFirstName().trim().isEmpty() || this.getLastName().trim().isEmpty() ||
-//                this.getPhone().trim().isEmpty() || this.getEmail().trim().isEmpty() || this.getAddress().trim().isEmpty()){
-//            return true;
-//        }else return false;
-//    }
-
 }

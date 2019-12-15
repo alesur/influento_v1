@@ -34,6 +34,4 @@ public class Review {
         this.link = link;
     }
 
-
-
 }
