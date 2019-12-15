@@ -16,6 +16,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 
+/**
+ *
+ * This Controller manages the Dashboard (view dashboard.html) and handles /error
+ * @home , maps "/", shows the Dashboard
+ * @error, maps "/error", shows the Dashboard
+ * @dashboard, maps "/dashboard", shows the Dashboard
+ *
+ */
 @Controller
 public class HomeController {
 

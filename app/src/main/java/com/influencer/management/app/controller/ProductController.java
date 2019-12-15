@@ -10,6 +10,16 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+
+/**
+ * This Controller manages operations with Products
+ *
+ * @productList shows the list of existing products
+ * @edit Get method, shows a prefilled form with the actual value of the Product ({id})to be edited
+ * @edit Post method, performs the update of the give product, or creation of new product
+ * @delete , performs the deletion of the product by {id}
+ * @showFormForAdd , shows a form to create new product
+ */
 @Controller
 @RequestMapping("/products")
 public class ProductController {
