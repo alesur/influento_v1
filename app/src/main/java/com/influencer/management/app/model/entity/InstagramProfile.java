@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * This object represents the Instagram profile of the influencer, storing its main properties
  * Fields:
- *      id, profilelink, followerNumbers, averageLikes, averageComments
+ *      id, profilelink, followersNumbers, averageLikes, averageComments
  */
 @Entity
 @Table(name = "instagramProfile")

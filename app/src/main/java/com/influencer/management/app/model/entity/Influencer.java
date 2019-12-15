@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * This class represents the Influencer, base entity of the app
  * Fields:
- *      id, profileName, notes, status, assignedProducts, personalDetails, InstagramProfiel, daysContacted, reviews,productsSent
+ *      id, profileName, notes, status, assignedProducts, personalDetails, InstagramProfile, daysContacted, reviews, productsSent
  * Methods:
  *      lastDayContacted(): returns a String, with the value
  *      addDate(): checks if List<DayContacted> exists and then adds new DayContacted
