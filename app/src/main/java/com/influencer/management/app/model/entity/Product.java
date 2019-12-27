@@ -37,12 +37,12 @@ public class Product {
     private String link;
 
 
-    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-    @JoinTable(name = "products_influencer",
-    joinColumns = @JoinColumn(name = "product_id"),
-    inverseJoinColumns = @JoinColumn(name = "influencer_id"))
-    private List<Influencer> influencers;
-
+//    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+//    @JoinTable(name = "products_influencer",
+//    joinColumns = @JoinColumn(name = "product_id"),
+//    inverseJoinColumns = @JoinColumn(name = "influencer_id"))
+//    private List<Influencer> influencers;
+//
     @Column(name = "created_at", updatable = false)
     @CreationTimestamp
     private Date createdAt;
