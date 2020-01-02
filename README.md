@@ -37,3 +37,9 @@ Basic Influencer Management System (IMS)
 ### Login info
 - **username:** admin
 - **password:** admin123
+
+
+## DEMO
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=lwZF9a3kJ1U
+" target="_blank"><img src="http://img.youtube.com/vi/lwZF9a3kJ1U/0.jpg" 
+alt="Demo" width="533" height="400" border="10" /></a>
