@@ -10,6 +10,24 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+
+/**
+ * This Controller manages operations with Influencer
+ *
+ * @influencerList shows the list of existing influencers
+ * @view Get method, shows a prefilled form with the actual information of the Influencer {id}
+ * @editget Get method, shows Influencer's form for editing
+ * @addReview Post method, adds review  for the Influencer {id}
+ * @assignProduct Post method, assigns products for the Influencer {id}
+ * @deleteReview Get method, deletes a review
+ * @addDayContacted Post method, adds the date of contact with Influencer
+ * @deleteDayContacted Get method, deletes the date of contact
+ * @deleteAssignedProduct Get method, deletes assigned product
+ * @editpost Post method, performs the update of the influencer and his personal details
+ * @showFormForAdd Get method, shows a form to create a new influencer
+ * @delete Get method, performs the deletion of the influencer by {id}
+ */
+
 @Controller
 @RequestMapping("/influencer")
 public class InfluencerController {

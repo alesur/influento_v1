@@ -7,7 +7,7 @@ import javax.persistence.*;
 /**
  * This object represents the Instagram profile of the influencer, storing its main properties
  * Fields:
- *      id, profilelink, followerNumbers, averageLikes, averageComments
+ *      id, profilelink, followersNumbers, averageLikes, averageComments
  */
 @Entity
 @Table(name = "instagramProfile")
@@ -29,10 +29,4 @@ public class InstagramProfile {
     @OneToOne(mappedBy = "instagramProfile",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private Influencer influencer;
 
-
-//    public boolean profileIsEmpty(){
-//        if(this.profileLink.trim().isEmpty()){
-//            return true;
-//        }else return false;
-//    }
 }

@@ -11,6 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/**
+ * This controller  manages the operations with Country entity
+ * @productList shows the list of existing countries in view contries.html
+ * @edit Get method, shows an existing country to be edited in the view country-edit.html
+ * @edit Post method, performs the update of the country (or creation of new one) and redirects to the list view
+ * @delete performs the deletion of the cuontry given by {id}
+ * @showFormForAdd shows a form to create a new country
+ */
 @Controller
 @RequestMapping("/countries")
 public class CountryController {
